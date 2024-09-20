@@ -5,17 +5,17 @@
 # The VulnCheck SDK
 Bring the VulnCheck API to your Go applications.
 
-[![Release](https://img.shields.io/github/v/release/vulncheck-oss/sdk)](https://github.com/vulncheck-oss/sdk/releases)
-[![Go Report Card](https://goreportcard.com/badge/github.com/vulncheck-oss/sdk)](https://goreportcard.com/report/github.com/vulncheck-oss/sdk)
-[![Go Reference](https://pkg.go.dev/badge/github.com/vulncheck-oss/sdk.svg)](https://pkg.go.dev/github.com/vulncheck-oss/sdk)
-[![Lint](https://github.com/vulncheck-oss/sdk/actions/workflows/lint.yml/badge.svg)](https://github.com/vulncheck-oss/sdk/actions/workflows/lint.yml)
-[![Tests](https://github.com/vulncheck-oss/sdk/actions/workflows/test.yml/badge.svg)](https://github.com/vulncheck-oss/sdk/actions/workflows/test.yml)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/vulncheck-oss/sdk/pulls)
+[![Release](https://img.shields.io/github/v/release/vulncheck-oss/sdk-go)](https://github.com/vulncheck-oss/sdk-go/releases)
+[![Go Report Card](https://goreportcard.com/badge/github.com/vulncheck-oss/sdk-go)](https://goreportcard.com/report/github.com/vulncheck-oss/sdk-go)
+[![Go Reference](https://pkg.go.dev/badge/github.com/vulncheck-oss/sdk-go.svg)](https://pkg.go.dev/github.com/vulncheck-oss/sdk-go)
+[![Lint](https://github.com/vulncheck-oss/sdk-go/actions/workflows/lint.yml/badge.svg)](https://github.com/vulncheck-oss/sdk-go/actions/workflows/lint.yml)
+[![Tests](https://github.com/vulncheck-oss/sdk-go/actions/workflows/test.yml/badge.svg)](https://github.com/vulncheck-oss/sdk-go/actions/workflows/test.yml)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/vulncheck-oss/sdk-go/pulls)
 
 ## Installation
 
 ```bash
-go get github.com/vulncheck-oss/sdk
+go get github.com/vulncheck-oss/sdk-go
 ```
 
 
@@ -28,7 +28,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/vulncheck-oss/sdk"
+	"github.com/vulncheck-oss/sdk-go"
 )
 
 func main() {

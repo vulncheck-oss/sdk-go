@@ -1,4 +1,4 @@
-module github.com/vulncheck-oss/sdk
+module github.com/vulncheck-oss/sdk-go
 
 go 1.21
 

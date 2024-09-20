@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-go@v5
         with:
           go-version: 1.21
-          cache-dependency-path: "/home/runner/work/sdk/go.sum"
+          cache-dependency-path: "/home/runner/work/sdk-go/go.sum"
 
       - name: Check out code
         uses: actions/checkout@v4
