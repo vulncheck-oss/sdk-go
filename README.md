@@ -33,7 +33,7 @@ import (
 
 func main() {
     client := sdk.Connect("https://api.vulncheck.com", "vulncheck_token")
-    fmt.Println(client.GetBaseURL())
+    fmt.Println(client.GetUrl())
 }
 ```
 
