@@ -2,7 +2,7 @@
     <img src="/logo-sdk.png" align="center" alt="VulnCheck Logo" width="150" />
 </p>
 
-# The VulnCheck SDK
+# The VulnCheck SDK For Go
 Bring the VulnCheck API to your Go applications.
 
 [![Release](https://img.shields.io/github/v/release/vulncheck-oss/sdk-go)](https://github.com/vulncheck-oss/sdk-go/releases)
