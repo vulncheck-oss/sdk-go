@@ -28,8 +28,8 @@ func TestSetAuthHeader(t *testing.T) {
 	})
 }
 
-func TestGetBaseURL(t *testing.T) {
-	t.Run("base url is set", func(t *testing.T) {
+func TestGetUrl(t *testing.T) {
+	t.Run("url is set", func(t *testing.T) {
 		client := Connect("https://api.vulncheck.com", "vulncheck_token")
 		assert.Equal(t, "https://api.vulncheck.com", client.GetUrl())
 	})

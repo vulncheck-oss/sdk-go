@@ -3,7 +3,7 @@ package sdk
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/vulncheck-oss/sdk/pkg/client"
+	"github.com/vulncheck-oss/sdk-go/pkg/client"
 	"net/http"
 	"net/url"
 )
