@@ -27,6 +27,7 @@ type IndexQueryParameters struct {
 	Country          string `json:"country"`
 	CountryCode      string `json:"country_code"`
 	Asn              string `json:"asn"`
+	Cidr             string `json:"cidr"`
 
 	// PAGINATION RELATED
 	Limit      int    `json:"limit"`
@@ -118,6 +119,12 @@ func setIndexQueryParameters(query url.Values, queryParameters ...IndexQueryPara
 		}
 		if queryParameter.CountryCode != "" {
 			query.Add("country_code", queryParameter.CountryCode)
+		}
+		if queryParameter.Asn != "" {
+			query.Add("asn", queryParameter.Asn)
+		}
+		if queryParameter.Cidr != "" {
+			query.Add("cidr", queryParameter.Cidr)
 		}
 		// PAGINATION RELATED
 		if queryParameter.Limit != 0 {
