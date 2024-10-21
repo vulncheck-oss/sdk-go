@@ -3736,7 +3736,7 @@ type IndexCisaKevResponse struct {
 	Data      []client.AdvisoryKEVCatalogVulnerability `json:"data"`
 }
 
-// GetIndexCisaKev -  The CISA Known Exploit Vulnerabilities catalog contains a list of exploited vulnerabilities known to CISA.
+// GetIndexCisaKev -  The CISA Known Exploited Vulnerabilities catalog contains a list of exploited vulnerabilities known to CISA.
 
 func (c *Client) GetIndexCisaKev(queryParameters ...IndexQueryParameters) (responseJSON *IndexCisaKevResponse, err error) {
 
@@ -5330,6 +5330,45 @@ func (c *Client) GetIndexExploits(queryParameters ...IndexQueryParameters) (resp
 	return responseJSON, nil
 }
 
+type IndexExploitsChangelogResponse struct {
+	Benchmark float64                       `json:"_benchmark"`
+	Meta      IndexMeta                     `json:"_meta"`
+	Data      []client.ApiExploitsChangelog `json:"data"`
+}
+
+// GetIndexExploitsChangelog -  Provides a history of the changes made to an exploits record.
+func (c *Client) GetIndexExploitsChangelog(queryParameters ...IndexQueryParameters) (responseJSON *IndexExploitsChangelogResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("exploits-changelog"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
 type IndexFSecureResponse struct {
 	Benchmark float64                  `json:"_benchmark"`
 	Meta      IndexMeta                `json:"_meta"`
@@ -5622,6 +5661,45 @@ func (c *Client) GetIndexFortinet(queryParameters ...IndexQueryParameters) (resp
 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("fortinet"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
+type IndexFortinetIpsResponse struct {
+	Benchmark float64                      `json:"_benchmark"`
+	Meta      IndexMeta                    `json:"_meta"`
+	Data      []client.AdvisoryFortinetIPS `json:"data"`
+}
+
+// GetIndexFortinetIps -  The Fortinet Labs Threat Encyclopedia is a list of threats identified by Fortinet.
+func (c *Client) GetIndexFortinetIps(queryParameters ...IndexQueryParameters) (responseJSON *IndexFortinetIpsResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("fortinet-ips"), nil)
 	if err != nil {
 		panic(err)
 	}
@@ -9249,6 +9327,84 @@ func (c *Client) GetIndexNaver(queryParameters ...IndexQueryParameters) (respons
 	return responseJSON, nil
 }
 
+type IndexNcscResponse struct {
+	Benchmark float64               `json:"_benchmark"`
+	Meta      IndexMeta             `json:"_meta"`
+	Data      []client.AdvisoryNCSC `json:"data"`
+}
+
+// GetIndexNcsc -  Nationaal Cyber Security Centrum advisories are official notifications released by the Nationaal Cyber Security Centrum to address security vulnerabilities and updates. These advisories provide important information about the vulnerabilities, their potential impact, and recommendations for users to apply necessary patches or updates to ensure security.
+func (c *Client) GetIndexNcsc(queryParameters ...IndexQueryParameters) (responseJSON *IndexNcscResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ncsc"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
+type IndexNcscCvesResponse struct {
+	Benchmark float64                  `json:"_benchmark"`
+	Meta      IndexMeta                `json:"_meta"`
+	Data      []client.AdvisoryNCSCCVE `json:"data"`
+}
+
+// GetIndexNcscCves -  Nationaal Cyber Security Centrum cves are official notifications released by the Nationaal Cyber Security Centrum to address security vulnerabilities and updates. These cves provide important information about the vulnerabilities, their potential impact, and recommendations for users to apply necessary patches or updates to ensure security.
+func (c *Client) GetIndexNcscCves(queryParameters ...IndexQueryParameters) (responseJSON *IndexNcscCvesResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ncsc-cves"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
 type IndexNecResponse struct {
 	Benchmark float64              `json:"_benchmark"`
 	Meta      IndexMeta            `json:"_meta"`
@@ -11209,6 +11365,45 @@ func (c *Client) GetIndexProofpoint(queryParameters ...IndexQueryParameters) (re
 	return responseJSON, nil
 }
 
+type IndexPtcResponse struct {
+	Benchmark float64              `json:"_benchmark"`
+	Meta      IndexMeta            `json:"_meta"`
+	Data      []client.AdvisoryPTC `json:"data"`
+}
+
+// GetIndexPtc -  PTC Security Advisories are official notifications released by PTC to address security vulnerabilities and updates. These advisories provide important information about the vulnerabilities, their potential impact, and recommendations for users to apply necessary patches or updates to ensure security.
+func (c *Client) GetIndexPtc(queryParameters ...IndexQueryParameters) (responseJSON *IndexPtcResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ptc"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
 type IndexPubResponse struct {
 	Benchmark float64                `json:"_benchmark"`
 	Meta      IndexMeta              `json:"_meta"`
@@ -12179,6 +12374,45 @@ func (c *Client) GetIndexSecuritylab(queryParameters ...IndexQueryParameters) (r
 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("securitylab"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
+type IndexSeebugResponse struct {
+	Benchmark float64                        `json:"_benchmark"`
+	Meta      IndexMeta                      `json:"_meta"`
+	Data      []client.AdvisorySeebugExploit `json:"data"`
+}
+
+// GetIndexSeebug -  Seebug Vulnerabilities is an archive of public exploits curated by Knownsec.
+func (c *Client) GetIndexSeebug(queryParameters ...IndexQueryParameters) (responseJSON *IndexSeebugResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("seebug"), nil)
 	if err != nil {
 		panic(err)
 	}
@@ -14404,6 +14638,45 @@ func (c *Client) GetIndexVoidsec(queryParameters ...IndexQueryParameters) (respo
 	return responseJSON, nil
 }
 
+type IndexVulncheckResponse struct {
+	Benchmark float64                    `json:"_benchmark"`
+	Meta      IndexMeta                  `json:"_meta"`
+	Data      []client.AdvisoryVulnCheck `json:"data"`
+}
+
+// GetIndexVulncheck -  VulnCheck Security Advisories are official advisories released by VulnCheck to address security vulnerabilities and updates. These advisories provide important information about the vulnerabilities, their potential impact, and recommendations for users to apply necessary patches or updates to ensure security.
+func (c *Client) GetIndexVulncheck(queryParameters ...IndexQueryParameters) (responseJSON *IndexVulncheckResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("vulncheck"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
 type IndexVulncheckConfigResponse struct {
 	Benchmark float64                          `json:"_benchmark"`
 	Meta      IndexMeta                        `json:"_meta"`
@@ -14450,7 +14723,7 @@ type IndexVulncheckCvelistV5Response struct {
 	Data      []client.AdvisoryVulnCheckCVEListV5 `json:"data"`
 }
 
-// GetIndexVulncheckCvelistV5 -  VulnCheck CVEList-V5 is a collection of publicly disclosed cybersecurity vulnerabilities by NIST that aims to identify, define and catalog publicly disclosed cybersecurity vulnerabilities. VulnCheck has curated and enhanced the wrong data present in the NIST vulnerabilities.
+// GetIndexVulncheckCvelistV5 -  VulnCheck CVEList-V5 is a collection of publicly disclosed cybersecurity vulnerabilities by NIST that aims to identify, define and catalog publicly disclosed cybersecurity vulnerabilities. VulnCheck has curated and enhanced the data present in the NIST vulnerabilities.
 
 func (c *Client) GetIndexVulncheckCvelistV5(queryParameters ...IndexQueryParameters) (responseJSON *IndexVulncheckCvelistV5Response, err error) {
 
@@ -14610,7 +14883,7 @@ type IndexVulnerabilityAliasesResponse struct {
 	Data      []client.ApiVulnerabilityAlias `json:"data"`
 }
 
-// GetIndexVulnerabilityAliases -  "The Vulnerability Aliases index contains the names or aliases associated with a particular vulnerability. Examples: Log4Shell, LogJam, HeatBleed, etc."
+// GetIndexVulnerabilityAliases -  The Vulnerability Aliases index contains the names or aliases associated with a particular vulnerability. Examples: Log4Shell, LogJam, HeatBleed, etc.
 
 func (c *Client) GetIndexVulnerabilityAliases(queryParameters ...IndexQueryParameters) (responseJSON *IndexVulnerabilityAliasesResponse, err error) {
 
