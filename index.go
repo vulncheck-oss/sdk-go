@@ -60,9 +60,9 @@ type IndexMetaParameters struct {
 }
 
 type IndexResponse struct {
-	Benchmark float64       `json:"_benchmark"`
-	Meta      IndexMeta     `json:"_meta"`
-	Data      []interface{} `json:"data"`
+	Benchmark float64           `json:"_benchmark"`
+	Meta      IndexMeta         `json:"_meta"`
+	Data      []json.RawMessage `json:"data"`
 }
 
 // add method to set query parameters
@@ -189,6 +189,6 @@ func (r IndexResponse) String() string {
 }
 
 // GetData - Returns the data from the response
-func (r IndexResponse) GetData() []interface{} {
+func (r IndexResponse) GetData() []json.RawMessage {
 	return r.Data
 }
