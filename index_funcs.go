@@ -250,6 +250,45 @@ func (c *Client) GetIndexAdobe(queryParameters ...IndexQueryParameters) (respons
 	return responseJSON, nil
 }
 
+type IndexAixResponse struct {
+	Benchmark float64              `json:"_benchmark"`
+	Meta      IndexMeta            `json:"_meta"`
+	Data      []client.AdvisoryAIX `json:"data"`
+}
+
+// GetIndexAix -  AIX security advisories are official notifications released by IBM to address security vulnerabilities and updates in the AIX operating system. These advisories provide important information about the vulnerabilities, their potential impact, and recommendations for users to apply necessary patches or updates to ensure the security of their systems.
+func (c *Client) GetIndexAix(queryParameters ...IndexQueryParameters) (responseJSON *IndexAixResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("aix"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
 type IndexAlephResearchResponse struct {
 	Benchmark float64                        `json:"_benchmark"`
 	Meta      IndexMeta                      `json:"_meta"`
@@ -5102,6 +5141,45 @@ func (c *Client) GetIndexEol(queryParameters ...IndexQueryParameters) (responseJ
 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("eol"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
+type IndexEolMicrosoftResponse struct {
+	Benchmark float64                       `json:"_benchmark"`
+	Meta      IndexMeta                     `json:"_meta"`
+	Data      []client.AdvisoryEOLMicrosoft `json:"data"`
+}
+
+// GetIndexEolMicrosoft -  The Microsoft EOL data feed contains Microsoft product lifecycle data including release, retirement dates and support policies.
+func (c *Client) GetIndexEolMicrosoft(queryParameters ...IndexQueryParameters) (responseJSON *IndexEolMicrosoftResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("eol-microsoft"), nil)
 	if err != nil {
 		panic(err)
 	}
@@ -14530,6 +14608,45 @@ func (c *Client) GetIndexVeritas(queryParameters ...IndexQueryParameters) (respo
 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("veritas"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
+type IndexVirtuozzoResponse struct {
+	Benchmark float64                    `json:"_benchmark"`
+	Meta      IndexMeta                  `json:"_meta"`
+	Data      []client.AdvisoryVirtuozzo `json:"data"`
+}
+
+// GetIndexVirtuozzo -  Virtuozzo security advisories are official notifications released by Virtuozzo to address security vulnerabilities and updates for the Virtuozzo ReadyKernel patch service. These advisories provide important information about the vulnerabilities, their potential impact, and recommendations for users to apply necessary patches or updates to ensure the security of their systems.
+func (c *Client) GetIndexVirtuozzo(queryParameters ...IndexQueryParameters) (responseJSON *IndexVirtuozzoResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("virtuozzo"), nil)
 	if err != nil {
 		panic(err)
 	}
