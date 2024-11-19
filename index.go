@@ -32,13 +32,12 @@ type IndexQueryParameters struct {
 	Jvndb            string `json:"jvndb"`
 
 	// PAGINATION RELATED
-	Limit      int    `json:"limit"`
-	Sort       string `json:"sort"`
-	Order      string `json:"order"`
-	Page       int    `json:"page"`
-	Cursor     string `json:"cursor"`
-	NextCursor string `json:"next_cursor"`
-	PrevCursor string `json:"prev_cursor"` // this may not exist
+	Limit       int    `json:"limit"`
+	Sort        string `json:"sort"`
+	Order       string `json:"order"`
+	Page        int    `json:"page"`
+	StartCursor bool   `json:"start_cursor"`
+	Cursor      string `json:"cursor"`
 }
 
 type IndexMeta struct {
@@ -54,6 +53,7 @@ type IndexMeta struct {
 	MaxPages       int                   `json:"max_pages"`
 	FirstItem      int                   `json:"first_item"`
 	LastItem       int                   `json:"last_item"`
+	NextCursor     string                `json:"next_cursor"`
 }
 
 type IndexMetaParameters struct {
@@ -147,14 +147,12 @@ func setIndexQueryParameters(query url.Values, queryParameters ...IndexQueryPara
 		if queryParameter.Page != 0 {
 			query.Add("page", fmt.Sprintf("%d", queryParameter.Page))
 		}
+		if queryParameter.StartCursor {
+			query.Add("start_cursor", fmt.Sprintf("%t", queryParameter.StartCursor))
+		}
 		if queryParameter.Cursor != "" {
 			query.Add("cursor", queryParameter.Cursor)
-		}
-		if queryParameter.NextCursor != "" {
-			query.Add("next_cursor", queryParameter.NextCursor)
-		}
-		if queryParameter.PrevCursor != "" {
-			query.Add("prev_cursor", queryParameter.PrevCursor)
+			query.Del("start_cursor") // cursor and start_cursor are mutually exclusive
 		}
 	}
 }
