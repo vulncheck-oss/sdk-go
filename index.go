@@ -28,6 +28,8 @@ type IndexQueryParameters struct {
 	CountryCode      string `json:"country_code"`
 	Asn              string `json:"asn"`
 	Cidr             string `json:"cidr"`
+	Ilvn             string `json:"ilvn"`
+	Jvndb            string `json:"jvndb"`
 
 	// PAGINATION RELATED
 	Limit      int    `json:"limit"`
@@ -125,6 +127,12 @@ func setIndexQueryParameters(query url.Values, queryParameters ...IndexQueryPara
 		}
 		if queryParameter.Cidr != "" {
 			query.Add("cidr", queryParameter.Cidr)
+		}
+		if queryParameter.Ilvn != "" {
+			query.Add("ilvn", queryParameter.Ilvn)
+		}
+		if queryParameter.Jvndb != "" {
+			query.Add("jvndb", queryParameter.Jvndb)
 		}
 		// PAGINATION RELATED
 		if queryParameter.Limit != 0 {
