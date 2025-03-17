@@ -10,6 +10,45 @@ import (
 
 // THIS FILE IS GENERATED. DO NOT EDIT
 
+type Index7zipResponse struct {
+	Benchmark float64                   `json:"_benchmark"`
+	Meta      IndexMeta                 `json:"_meta"`
+	Data      []client.AdvisorySevenZip `json:"data"`
+}
+
+// GetIndex7zip -  7Zip security advisories are official notifications released by 7Zip to address security vulnerabilities and updates. These advisories provide important information about the vulnerabilities, their potential impact, and recommendations for users to apply necessary patches or updates to ensure the security of their systems.
+func (c *Client) GetIndex7zip(queryParameters ...IndexQueryParameters) (responseJSON *Index7zipResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("7zip"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
 type IndexA10Response struct {
 	Benchmark float64              `json:"_benchmark"`
 	Meta      IndexMeta            `json:"_meta"`
@@ -409,6 +448,46 @@ func (c *Client) GetIndexAlpine(queryParameters ...IndexQueryParameters) (respon
 	return responseJSON, nil
 }
 
+type IndexAlpinePurlsResponse struct {
+	Benchmark float64                    `json:"_benchmark"`
+	Meta      IndexMeta                  `json:"_meta"`
+	Data      []client.PurlsPurlResponse `json:"data"`
+}
+
+// GetIndexAlpinePurls -  Alpine purls is a collection of Alpine package purls with their associated versions and cves.
+
+func (c *Client) GetIndexAlpinePurls(queryParameters ...IndexQueryParameters) (responseJSON *IndexAlpinePurlsResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("alpine-purls"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
 type IndexAmazonResponse struct {
 	Benchmark float64                 `json:"_benchmark"`
 	Meta      IndexMeta               `json:"_meta"`
@@ -421,6 +500,45 @@ func (c *Client) GetIndexAmazon(queryParameters ...IndexQueryParameters) (respon
 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("amazon"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
+type IndexAmazonCveResponse struct {
+	Benchmark float64                    `json:"_benchmark"`
+	Meta      IndexMeta                  `json:"_meta"`
+	Data      []client.AdvisoryAmazonCVE `json:"data"`
+}
+
+// GetIndexAmazonCve -  Amazon CVEs are official notifications released by AWS to address security vulnerabilities and updates. These advisories provide important information about the vulnerabilities, their potential impact, and recommendations for users to apply necessary patches or updates to ensure the security of their systems.
+func (c *Client) GetIndexAmazonCve(queryParameters ...IndexQueryParameters) (responseJSON *IndexAmazonCveResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("amazon-cve"), nil)
 	if err != nil {
 		panic(err)
 	}
@@ -1941,6 +2059,45 @@ func (c *Client) GetIndexAsterisk(queryParameters ...IndexQueryParameters) (resp
 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("asterisk"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
+type IndexAstraResponse struct {
+	Benchmark float64                `json:"_benchmark"`
+	Meta      IndexMeta              `json:"_meta"`
+	Data      []client.AdvisoryAstra `json:"data"`
+}
+
+// GetIndexAstra -  Astra security bulletins are official notifications released by Astra to address security vulnerabilities and updates for the Astra linux distrubution. These advisories provide important information about the vulnerabilities, their potential impact, and recommendations for users to apply necessary patches or updates to ensure the security of their systems.
+func (c *Client) GetIndexAstra(queryParameters ...IndexQueryParameters) (responseJSON *IndexAstraResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("astra"), nil)
 	if err != nil {
 		panic(err)
 	}
@@ -3849,6 +4006,45 @@ func (c *Client) GetIndexCisco(queryParameters ...IndexQueryParameters) (respons
 	return responseJSON, nil
 }
 
+type IndexCiscoCsafResponse struct {
+	Benchmark float64                    `json:"_benchmark"`
+	Meta      IndexMeta                  `json:"_meta"`
+	Data      []client.AdvisoryCiscoCSAF `json:"data"`
+}
+
+// GetIndexCiscoCsaf -  Cisco CSAF is an index of Cisco security advisories in CSAF format.
+func (c *Client) GetIndexCiscoCsaf(queryParameters ...IndexQueryParameters) (responseJSON *IndexCiscoCsafResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("cisco-csaf"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
 type IndexCiscoTalosResponse struct {
 	Benchmark float64                        `json:"_benchmark"`
 	Meta      IndexMeta                      `json:"_meta"`
@@ -4341,6 +4537,45 @@ func (c *Client) GetIndexConan(queryParameters ...IndexQueryParameters) (respons
 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("conan"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
+type IndexCoreimpactResponse struct {
+	Benchmark float64                            `json:"_benchmark"`
+	Meta      IndexMeta                          `json:"_meta"`
+	Data      []client.AdvisoryCoreImpactExploit `json:"data"`
+}
+
+// GetIndexCoreimpact -  Core Impact is a library of expert validated exploits for safe and effective pen tests.
+func (c *Client) GetIndexCoreimpact(queryParameters ...IndexQueryParameters) (responseJSON *IndexCoreimpactResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("coreimpact"), nil)
 	if err != nil {
 		panic(err)
 	}
@@ -4929,6 +5164,45 @@ func (c *Client) GetIndexDraytek(queryParameters ...IndexQueryParameters) (respo
 	return responseJSON, nil
 }
 
+type IndexDrupalResponse struct {
+	Benchmark float64                 `json:"_benchmark"`
+	Meta      IndexMeta               `json:"_meta"`
+	Data      []client.AdvisoryDrupal `json:"data"`
+}
+
+// GetIndexDrupal -  Drupal security advisories are official notifications released by the Drupal Security Team to address security vulnerabilities and updates. These advisories provide important information about the vulnerabilities, their potential impact, and recommendations for users to apply necessary patches or updates to ensure the security of their systems.
+func (c *Client) GetIndexDrupal(queryParameters ...IndexQueryParameters) (responseJSON *IndexDrupalResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("drupal"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
 type IndexEatonResponse struct {
 	Benchmark float64                        `json:"_benchmark"`
 	Meta      IndexMeta                      `json:"_meta"`
@@ -5101,6 +5375,45 @@ func (c *Client) GetIndexEmerson(queryParameters ...IndexQueryParameters) (respo
 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("emerson"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
+type IndexEndoflifeResponse struct {
+	Benchmark float64                    `json:"_benchmark"`
+	Meta      IndexMeta                  `json:"_meta"`
+	Data      []client.AdvisoryEndOfLife `json:"data"`
+}
+
+// GetIndexEndoflife -  End-of-life (EOL) and support information is often hard to track, or very badly presented. This index documents EOL dates and support lifecycles for various products.
+func (c *Client) GetIndexEndoflife(queryParameters ...IndexQueryParameters) (responseJSON *IndexEndoflifeResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("endoflife"), nil)
 	if err != nil {
 		panic(err)
 	}
@@ -5619,6 +5932,45 @@ func (c *Client) GetIndexFilecloud(queryParameters ...IndexQueryParameters) (res
 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("filecloud"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
+type IndexFilezillaResponse struct {
+	Benchmark float64                    `json:"_benchmark"`
+	Meta      IndexMeta                  `json:"_meta"`
+	Data      []client.AdvisoryFileZilla `json:"data"`
+}
+
+// GetIndexFilezilla -  FileZilla security advisories are official notifications released by FileZilla to address security vulnerabilities and updates. These advisories provide important information about the vulnerabilities, their potential impact, and recommendations for users to apply necessary patches or updates to ensure the security of their systems.
+func (c *Client) GetIndexFilezilla(queryParameters ...IndexQueryParameters) (responseJSON *IndexFilezillaResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("filezilla"), nil)
 	if err != nil {
 		panic(err)
 	}
@@ -9923,6 +10275,45 @@ func (c *Client) GetIndexNistNvd2Cpematch(queryParameters ...IndexQueryParameter
 	return responseJSON, nil
 }
 
+type IndexNistNvd2SourcesResponse struct {
+	Benchmark float64                      `json:"_benchmark"`
+	Meta      IndexMeta                    `json:"_meta"`
+	Data      []client.AdvisoryNVD20Source `json:"data"`
+}
+
+// GetIndexNistNvd2Sources -  This Index contains information about CNAs, such as email addresses, official names, UUIDs used in NVD records. This allows us to lookup the UUIDs in NVD records and retrieve CNA names.
+func (c *Client) GetIndexNistNvd2Sources(queryParameters ...IndexQueryParameters) (responseJSON *IndexNistNvd2SourcesResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("nist-nvd2-sources"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
 type IndexNodeSecurityResponse struct {
 	Benchmark float64                       `json:"_benchmark"`
 	Meta      IndexMeta                     `json:"_meta"`
@@ -10603,6 +10994,46 @@ func (c *Client) GetIndexOpenssh(queryParameters ...IndexQueryParameters) (respo
 	return responseJSON, nil
 }
 
+type IndexOpenjdkResponse struct {
+	Benchmark float64                  `json:"_benchmark"`
+	Meta      IndexMeta                `json:"_meta"`
+	Data      []client.AdvisoryOpenJDK `json:"data"`
+}
+
+// GetIndexOpenjdk -  OpenJDK security advisories are official notifications released by the OpenJDK team to address security vulnerabilities and updates. These advisories provide important information about the vulnerabilities, their potential impact, and recommendations for users to apply necessary patches or updates to ensure the security of their systems.
+
+func (c *Client) GetIndexOpenjdk(queryParameters ...IndexQueryParameters) (responseJSON *IndexOpenjdkResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("openjdk"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
 type IndexOpensslSecadvResponse struct {
 	Benchmark float64                        `json:"_benchmark"`
 	Meta      IndexMeta                      `json:"_meta"`
@@ -10935,6 +11366,45 @@ func (c *Client) GetIndexOwncloud(queryParameters ...IndexQueryParameters) (resp
 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("owncloud"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
+type IndexPacketstormResponse struct {
+	Benchmark float64                             `json:"_benchmark"`
+	Meta      IndexMeta                           `json:"_meta"`
+	Data      []client.AdvisoryPacketstormExploit `json:"data"`
+}
+
+// GetIndexPacketstorm -  Packetstorm exploits is a list curated by the Packetstorm team that holds a quarter century of exploits.
+func (c *Client) GetIndexPacketstorm(queryParameters ...IndexQueryParameters) (responseJSON *IndexPacketstormResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("packetstorm"), nil)
 	if err != nil {
 		panic(err)
 	}
@@ -11961,6 +12431,46 @@ func (c *Client) GetIndexRevive(queryParameters ...IndexQueryParameters) (respon
 	return responseJSON, nil
 }
 
+type IndexRocheResponse struct {
+	Benchmark float64                `json:"_benchmark"`
+	Meta      IndexMeta              `json:"_meta"`
+	Data      []client.AdvisoryRoche `json:"data"`
+}
+
+// GetIndexRoche -  Roche security advisories are official notifications released by Roche to address security vulnerabilities and updates. These advisories provide important information about the vulnerabilities, their potential impact, and recommendations for users to apply necessary patches or updates to ensure the security of their systems.
+
+func (c *Client) GetIndexRoche(queryParameters ...IndexQueryParameters) (responseJSON *IndexRocheResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("roche"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
 type IndexRockwellResponse struct {
 	Benchmark float64                   `json:"_benchmark"`
 	Meta      IndexMeta                 `json:"_meta"`
@@ -12053,6 +12563,46 @@ func (c *Client) GetIndexRockyErrata(queryParameters ...IndexQueryParameters) (r
 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("rocky-errata"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
+type IndexRockyPurlsResponse struct {
+	Benchmark float64                    `json:"_benchmark"`
+	Meta      IndexMeta                  `json:"_meta"`
+	Data      []client.PurlsPurlResponse `json:"data"`
+}
+
+// GetIndexRockyPurls -  Rocky purls is a collection of rocky package purls with their associated versions and cves.
+
+func (c *Client) GetIndexRockyPurls(queryParameters ...IndexQueryParameters) (responseJSON *IndexRockyPurlsResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("rocky-purls"), nil)
 	if err != nil {
 		panic(err)
 	}
@@ -12838,18 +13388,18 @@ func (c *Client) GetIndexSierraWireless(queryParameters ...IndexQueryParameters)
 	return responseJSON, nil
 }
 
-type IndexSigmaRulesResponse struct {
+type IndexSigmahqSigmaRulesResponse struct {
 	Benchmark float64                    `json:"_benchmark"`
 	Meta      IndexMeta                  `json:"_meta"`
 	Data      []client.AdvisorySigmaRule `json:"data"`
 }
 
-// GetIndexSigmaRules -  Sigma Rules is a collection of rules where detection engineers, threat hunters and all defensive security practitioners collaborate on detection rules for SIEM systems.
+// GetIndexSigmahqSigmaRules -  Sigma Rules is a collection of rules where detection engineers, threat hunters and all defensive security practitioners collaborate on detection rules for SIEM systems.
 
-func (c *Client) GetIndexSigmaRules(queryParameters ...IndexQueryParameters) (responseJSON *IndexSigmaRulesResponse, err error) {
+func (c *Client) GetIndexSigmahqSigmaRules(queryParameters ...IndexQueryParameters) (responseJSON *IndexSigmahqSigmaRulesResponse, err error) {
 
 	httpClient := &http.Client{}
-	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("sigma-rules"), nil)
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("sigmahq-sigma-rules"), nil)
 	if err != nil {
 		panic(err)
 	}
@@ -13010,6 +13560,45 @@ func (c *Client) GetIndexSolr(queryParameters ...IndexQueryParameters) (response
 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("solr"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
+type IndexSonatypeResponse struct {
+	Benchmark float64                   `json:"_benchmark"`
+	Meta      IndexMeta                 `json:"_meta"`
+	Data      []client.AdvisorySonatype `json:"data"`
+}
+
+// GetIndexSonatype -  Sonatype security advisories are official notifications released by Sonatype to address security vulnerabilities and updates. These advisories provide important information about the vulnerabilities, their potential impact, and recommendations for users to apply necessary patches or updates to ensure the security of their systems.
+func (c *Client) GetIndexSonatype(queryParameters ...IndexQueryParameters) (responseJSON *IndexSonatypeResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("sonatype"), nil)
 	if err != nil {
 		panic(err)
 	}
@@ -13370,6 +13959,45 @@ func (c *Client) GetIndexSuse(queryParameters ...IndexQueryParameters) (response
 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("suse"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
+type IndexSuseSecurityResponse struct {
+	Benchmark float64                       `json:"_benchmark"`
+	Meta      IndexMeta                     `json:"_meta"`
+	Data      []client.AdvisorySuseSecurity `json:"data"`
+}
+
+// GetIndexSuseSecurity -  Suse security advisories are official notifications released by the Suse Security Team to address security vulnerabilities and updates. These advisories provide important information about the vulnerabilities, their potential impact, and recommendations for users to apply necessary patches or updates to ensure the security of their systems.
+func (c *Client) GetIndexSuseSecurity(queryParameters ...IndexQueryParameters) (responseJSON *IndexSuseSecurityResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("suse-security"), nil)
 	if err != nil {
 		panic(err)
 	}
@@ -14647,6 +15275,45 @@ func (c *Client) GetIndexVirtuozzo(queryParameters ...IndexQueryParameters) (res
 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("virtuozzo"), nil)
+	if err != nil {
+		panic(err)
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		var metaError MetaError
+		_ = json.NewDecoder(resp.Body).Decode(&metaError)
+
+		return nil, fmt.Errorf("error: %v", metaError.Errors)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
+type IndexVlcResponse struct {
+	Benchmark float64              `json:"_benchmark"`
+	Meta      IndexMeta            `json:"_meta"`
+	Data      []client.AdvisoryVLC `json:"data"`
+}
+
+// GetIndexVlc -  VLC security advisories are official notifications released by VLC to address security vulnerabilities and updates. These advisories provide important information about the vulnerabilities, their potential impact, and recommendations for users to apply necessary patches or updates to ensure the security of their systems.
+func (c *Client) GetIndexVlc(queryParameters ...IndexQueryParameters) (responseJSON *IndexVlcResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("vlc"), nil)
 	if err != nil {
 		panic(err)
 	}

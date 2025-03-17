@@ -9,27 +9,29 @@ import (
 
 type IndexQueryParameters struct {
 	// INDEX RELATED
-	Cve              string `json:"cve"`
-	Alias            string `json:"alias"`
-	Iava             string `json:"iava"`
-	LastModStartDate string `json:"lastModStartDate"`
-	LastModEndDate   string `json:"lastModEndDate"`
-	PubStartDate     string `json:"pubStartDate"`
-	PubEndDate       string `json:"pubEndDate"`
-	ThreatActor      string `json:"threat_actor"`
-	MitreId          string `json:"mitre_id"`
-	MispId           string `json:"misp_id"`
-	Ransomware       string `json:"ransomware"`
-	Botnet           string `json:"botnet"`
-	Hostname         string `json:"hostname"`
-	ID               string `json:"id"`
-	Kind             string `json:"kind"`
-	Country          string `json:"country"`
-	CountryCode      string `json:"country_code"`
-	Asn              string `json:"asn"`
-	Cidr             string `json:"cidr"`
-	Ilvn             string `json:"ilvn"`
-	Jvndb            string `json:"jvndb"`
+	Cve                string `json:"cve"`
+	Alias              string `json:"alias"`
+	Iava               string `json:"iava"`
+	UpdatedAtStartDate string `json:"updatedAtStartDate"`
+	UpdatedAtEndDate   string `json:"updatedAtEndDate"`
+	LastModStartDate   string `json:"lastModStartDate"`
+	LastModEndDate     string `json:"lastModEndDate"`
+	PubStartDate       string `json:"pubStartDate"`
+	PubEndDate         string `json:"pubEndDate"`
+	ThreatActor        string `json:"threat_actor"`
+	MitreId            string `json:"mitre_id"`
+	MispId             string `json:"misp_id"`
+	Ransomware         string `json:"ransomware"`
+	Botnet             string `json:"botnet"`
+	Hostname           string `json:"hostname"`
+	ID                 string `json:"id"`
+	Kind               string `json:"kind"`
+	Country            string `json:"country"`
+	CountryCode        string `json:"country_code"`
+	Asn                string `json:"asn"`
+	Cidr               string `json:"cidr"`
+	Ilvn               string `json:"ilvn"`
+	Jvndb              string `json:"jvndb"`
 
 	// PAGINATION RELATED
 	Limit       int    `json:"limit"`
@@ -79,6 +81,12 @@ func setIndexQueryParameters(query url.Values, queryParameters ...IndexQueryPara
 		}
 		if queryParameter.Iava != "" {
 			query.Add("iava", queryParameter.Iava)
+		}
+		if queryParameter.UpdatedAtStartDate != "" {
+			query.Add("updatedAtStartDate", queryParameter.UpdatedAtStartDate)
+		}
+		if queryParameter.UpdatedAtEndDate != "" {
+			query.Add("updatedAtEndDate", queryParameter.UpdatedAtEndDate)
 		}
 		if queryParameter.LastModStartDate != "" {
 			query.Add("lastModStartDate", queryParameter.LastModStartDate)
