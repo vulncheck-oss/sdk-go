@@ -22,7 +22,7 @@ func (c *Client) GetIndex7zip(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("7zip"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -33,7 +33,7 @@ func (c *Client) GetIndex7zip(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -62,7 +62,7 @@ func (c *Client) GetIndexA10(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("a10"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -73,7 +73,7 @@ func (c *Client) GetIndexA10(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -102,7 +102,7 @@ func (c *Client) GetIndexAbb(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("abb"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -113,7 +113,7 @@ func (c *Client) GetIndexAbb(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -142,7 +142,7 @@ func (c *Client) GetIndexAbbott(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("abbott"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -153,7 +153,7 @@ func (c *Client) GetIndexAbbott(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -182,7 +182,7 @@ func (c *Client) GetIndexAbsolute(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("absolute"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -193,7 +193,7 @@ func (c *Client) GetIndexAbsolute(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -222,7 +222,7 @@ func (c *Client) GetIndexAcronis(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("acronis"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -233,7 +233,7 @@ func (c *Client) GetIndexAcronis(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -262,7 +262,7 @@ func (c *Client) GetIndexAdobe(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("adobe"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -273,7 +273,7 @@ func (c *Client) GetIndexAdobe(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -301,7 +301,7 @@ func (c *Client) GetIndexAix(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("aix"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -312,7 +312,7 @@ func (c *Client) GetIndexAix(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -341,7 +341,7 @@ func (c *Client) GetIndexAlephResearch(queryParameters ...IndexQueryParameters) 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("aleph-research"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -352,7 +352,7 @@ func (c *Client) GetIndexAlephResearch(queryParameters ...IndexQueryParameters) 
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -381,7 +381,7 @@ func (c *Client) GetIndexAlma(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("alma"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -392,7 +392,7 @@ func (c *Client) GetIndexAlma(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -421,7 +421,7 @@ func (c *Client) GetIndexAlpine(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("alpine"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -432,7 +432,7 @@ func (c *Client) GetIndexAlpine(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -461,7 +461,7 @@ func (c *Client) GetIndexAlpinePurls(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("alpine-purls"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -472,7 +472,7 @@ func (c *Client) GetIndexAlpinePurls(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -501,7 +501,7 @@ func (c *Client) GetIndexAmazon(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("amazon"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -512,7 +512,7 @@ func (c *Client) GetIndexAmazon(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -540,7 +540,7 @@ func (c *Client) GetIndexAmazonCve(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("amazon-cve"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -551,7 +551,7 @@ func (c *Client) GetIndexAmazonCve(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -580,7 +580,7 @@ func (c *Client) GetIndexAmd(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("amd"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -591,7 +591,7 @@ func (c *Client) GetIndexAmd(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -620,7 +620,7 @@ func (c *Client) GetIndexAmi(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ami"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -631,7 +631,7 @@ func (c *Client) GetIndexAmi(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -660,7 +660,7 @@ func (c *Client) GetIndexAnchoreNvdOverride(queryParameters ...IndexQueryParamet
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("anchore-nvd-override"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -671,7 +671,7 @@ func (c *Client) GetIndexAnchoreNvdOverride(queryParameters ...IndexQueryParamet
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -700,7 +700,7 @@ func (c *Client) GetIndexAndroid(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("android"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -711,7 +711,7 @@ func (c *Client) GetIndexAndroid(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -740,7 +740,7 @@ func (c *Client) GetIndexApacheActivemq(queryParameters ...IndexQueryParameters)
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-activemq"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -751,7 +751,7 @@ func (c *Client) GetIndexApacheActivemq(queryParameters ...IndexQueryParameters)
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -780,7 +780,7 @@ func (c *Client) GetIndexApacheArchiva(queryParameters ...IndexQueryParameters) 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-archiva"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -791,7 +791,7 @@ func (c *Client) GetIndexApacheArchiva(queryParameters ...IndexQueryParameters) 
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -820,7 +820,7 @@ func (c *Client) GetIndexApacheArrow(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-arrow"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -831,7 +831,7 @@ func (c *Client) GetIndexApacheArrow(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -860,7 +860,7 @@ func (c *Client) GetIndexApacheCamel(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-camel"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -871,7 +871,7 @@ func (c *Client) GetIndexApacheCamel(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -900,7 +900,7 @@ func (c *Client) GetIndexApacheCommons(queryParameters ...IndexQueryParameters) 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-commons"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -911,7 +911,7 @@ func (c *Client) GetIndexApacheCommons(queryParameters ...IndexQueryParameters) 
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -940,7 +940,7 @@ func (c *Client) GetIndexApacheCouchdb(queryParameters ...IndexQueryParameters) 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-couchdb"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -951,7 +951,7 @@ func (c *Client) GetIndexApacheCouchdb(queryParameters ...IndexQueryParameters) 
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -980,7 +980,7 @@ func (c *Client) GetIndexApacheFlink(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-flink"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -991,7 +991,7 @@ func (c *Client) GetIndexApacheFlink(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1020,7 +1020,7 @@ func (c *Client) GetIndexApacheGuacamole(queryParameters ...IndexQueryParameters
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-guacamole"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1031,7 +1031,7 @@ func (c *Client) GetIndexApacheGuacamole(queryParameters ...IndexQueryParameters
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1060,7 +1060,7 @@ func (c *Client) GetIndexApacheHadoop(queryParameters ...IndexQueryParameters) (
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-hadoop"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1071,7 +1071,7 @@ func (c *Client) GetIndexApacheHadoop(queryParameters ...IndexQueryParameters) (
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1100,7 +1100,7 @@ func (c *Client) GetIndexApacheHttp(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-http"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1111,7 +1111,7 @@ func (c *Client) GetIndexApacheHttp(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1140,7 +1140,7 @@ func (c *Client) GetIndexApacheJspwiki(queryParameters ...IndexQueryParameters) 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-jspwiki"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1151,7 +1151,7 @@ func (c *Client) GetIndexApacheJspwiki(queryParameters ...IndexQueryParameters) 
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1180,7 +1180,7 @@ func (c *Client) GetIndexApacheKafka(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-kafka"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1191,7 +1191,7 @@ func (c *Client) GetIndexApacheKafka(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1220,7 +1220,7 @@ func (c *Client) GetIndexApacheLoggingservices(queryParameters ...IndexQueryPara
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-loggingservices"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1231,7 +1231,7 @@ func (c *Client) GetIndexApacheLoggingservices(queryParameters ...IndexQueryPara
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1260,7 +1260,7 @@ func (c *Client) GetIndexApacheNifi(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-nifi"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1271,7 +1271,7 @@ func (c *Client) GetIndexApacheNifi(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1300,7 +1300,7 @@ func (c *Client) GetIndexApacheOfbiz(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-ofbiz"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1311,7 +1311,7 @@ func (c *Client) GetIndexApacheOfbiz(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1340,7 +1340,7 @@ func (c *Client) GetIndexApacheOpenmeetings(queryParameters ...IndexQueryParamet
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-openmeetings"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1351,7 +1351,7 @@ func (c *Client) GetIndexApacheOpenmeetings(queryParameters ...IndexQueryParamet
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1380,7 +1380,7 @@ func (c *Client) GetIndexApacheOpenoffice(queryParameters ...IndexQueryParameter
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-openoffice"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1391,7 +1391,7 @@ func (c *Client) GetIndexApacheOpenoffice(queryParameters ...IndexQueryParameter
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1420,7 +1420,7 @@ func (c *Client) GetIndexApachePulsar(queryParameters ...IndexQueryParameters) (
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-pulsar"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1431,7 +1431,7 @@ func (c *Client) GetIndexApachePulsar(queryParameters ...IndexQueryParameters) (
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1460,7 +1460,7 @@ func (c *Client) GetIndexApacheShiro(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-shiro"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1471,7 +1471,7 @@ func (c *Client) GetIndexApacheShiro(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1500,7 +1500,7 @@ func (c *Client) GetIndexApacheSpark(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-spark"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1511,7 +1511,7 @@ func (c *Client) GetIndexApacheSpark(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1540,7 +1540,7 @@ func (c *Client) GetIndexApacheStruts(queryParameters ...IndexQueryParameters) (
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-struts"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1551,7 +1551,7 @@ func (c *Client) GetIndexApacheStruts(queryParameters ...IndexQueryParameters) (
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1580,7 +1580,7 @@ func (c *Client) GetIndexApacheSubversion(queryParameters ...IndexQueryParameter
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-subversion"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1591,7 +1591,7 @@ func (c *Client) GetIndexApacheSubversion(queryParameters ...IndexQueryParameter
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1620,7 +1620,7 @@ func (c *Client) GetIndexApacheSuperset(queryParameters ...IndexQueryParameters)
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-superset"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1631,7 +1631,7 @@ func (c *Client) GetIndexApacheSuperset(queryParameters ...IndexQueryParameters)
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1660,7 +1660,7 @@ func (c *Client) GetIndexApacheTomcat(queryParameters ...IndexQueryParameters) (
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-tomcat"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1671,7 +1671,7 @@ func (c *Client) GetIndexApacheTomcat(queryParameters ...IndexQueryParameters) (
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1700,7 +1700,7 @@ func (c *Client) GetIndexApacheZookeeper(queryParameters ...IndexQueryParameters
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apache-zookeeper"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1711,7 +1711,7 @@ func (c *Client) GetIndexApacheZookeeper(queryParameters ...IndexQueryParameters
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1740,7 +1740,7 @@ func (c *Client) GetIndexAppcheck(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("appcheck"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1751,7 +1751,7 @@ func (c *Client) GetIndexAppcheck(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1780,7 +1780,7 @@ func (c *Client) GetIndexAppgate(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("appgate"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1791,7 +1791,7 @@ func (c *Client) GetIndexAppgate(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1820,7 +1820,7 @@ func (c *Client) GetIndexApple(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("apple"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1831,7 +1831,7 @@ func (c *Client) GetIndexApple(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1860,7 +1860,7 @@ func (c *Client) GetIndexArch(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("arch"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1871,7 +1871,7 @@ func (c *Client) GetIndexArch(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1900,7 +1900,7 @@ func (c *Client) GetIndexArista(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("arista"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1911,7 +1911,7 @@ func (c *Client) GetIndexArista(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1940,7 +1940,7 @@ func (c *Client) GetIndexAruba(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("aruba"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1951,7 +1951,7 @@ func (c *Client) GetIndexAruba(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -1980,7 +1980,7 @@ func (c *Client) GetIndexAsrg(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("asrg"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -1991,7 +1991,7 @@ func (c *Client) GetIndexAsrg(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2020,7 +2020,7 @@ func (c *Client) GetIndexAssetnote(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("assetnote"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2031,7 +2031,7 @@ func (c *Client) GetIndexAssetnote(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2060,7 +2060,7 @@ func (c *Client) GetIndexAsterisk(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("asterisk"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2071,7 +2071,7 @@ func (c *Client) GetIndexAsterisk(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2099,7 +2099,7 @@ func (c *Client) GetIndexAstra(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("astra"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2110,7 +2110,7 @@ func (c *Client) GetIndexAstra(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2139,7 +2139,7 @@ func (c *Client) GetIndexAsus(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("asus"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2150,7 +2150,7 @@ func (c *Client) GetIndexAsus(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2179,7 +2179,7 @@ func (c *Client) GetIndexAtlassian(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("atlassian"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2190,7 +2190,7 @@ func (c *Client) GetIndexAtlassian(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2219,7 +2219,7 @@ func (c *Client) GetIndexAtlassianVulns(queryParameters ...IndexQueryParameters)
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("atlassian-vulns"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2230,7 +2230,7 @@ func (c *Client) GetIndexAtlassianVulns(queryParameters ...IndexQueryParameters)
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2259,7 +2259,7 @@ func (c *Client) GetIndexAtredis(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("atredis"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2270,7 +2270,7 @@ func (c *Client) GetIndexAtredis(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2299,7 +2299,7 @@ func (c *Client) GetIndexAuscert(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("auscert"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2310,7 +2310,7 @@ func (c *Client) GetIndexAuscert(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2339,7 +2339,7 @@ func (c *Client) GetIndexAutodesk(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("autodesk"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2350,7 +2350,7 @@ func (c *Client) GetIndexAutodesk(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2379,7 +2379,7 @@ func (c *Client) GetIndexAvaya(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("avaya"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2390,7 +2390,7 @@ func (c *Client) GetIndexAvaya(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2419,7 +2419,7 @@ func (c *Client) GetIndexAveva(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("aveva"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2430,7 +2430,7 @@ func (c *Client) GetIndexAveva(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2459,7 +2459,7 @@ func (c *Client) GetIndexAvigilon(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("avigilon"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2470,7 +2470,7 @@ func (c *Client) GetIndexAvigilon(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2499,7 +2499,7 @@ func (c *Client) GetIndexAws(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("aws"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2510,7 +2510,7 @@ func (c *Client) GetIndexAws(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2539,7 +2539,7 @@ func (c *Client) GetIndexAxis(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("axis"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2550,7 +2550,7 @@ func (c *Client) GetIndexAxis(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2579,7 +2579,7 @@ func (c *Client) GetIndexAzul(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("azul"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2590,7 +2590,7 @@ func (c *Client) GetIndexAzul(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2619,7 +2619,7 @@ func (c *Client) GetIndexBandr(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("bandr"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2630,7 +2630,7 @@ func (c *Client) GetIndexBandr(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2659,7 +2659,7 @@ func (c *Client) GetIndexBaxter(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("baxter"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2670,7 +2670,7 @@ func (c *Client) GetIndexBaxter(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2699,7 +2699,7 @@ func (c *Client) GetIndexBbraun(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("bbraun"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2710,7 +2710,7 @@ func (c *Client) GetIndexBbraun(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2739,7 +2739,7 @@ func (c *Client) GetIndexBd(queryParameters ...IndexQueryParameters) (responseJS
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("bd"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2750,7 +2750,7 @@ func (c *Client) GetIndexBd(queryParameters ...IndexQueryParameters) (responseJS
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2779,7 +2779,7 @@ func (c *Client) GetIndexBdu(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("bdu"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2790,7 +2790,7 @@ func (c *Client) GetIndexBdu(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2819,7 +2819,7 @@ func (c *Client) GetIndexBeckhoff(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("beckhoff"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2830,7 +2830,7 @@ func (c *Client) GetIndexBeckhoff(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2859,7 +2859,7 @@ func (c *Client) GetIndexBelden(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("belden"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2870,7 +2870,7 @@ func (c *Client) GetIndexBelden(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2899,7 +2899,7 @@ func (c *Client) GetIndexBeyondTrust(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("beyond-trust"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2910,7 +2910,7 @@ func (c *Client) GetIndexBeyondTrust(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2939,7 +2939,7 @@ func (c *Client) GetIndexBinarly(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("binarly"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2950,7 +2950,7 @@ func (c *Client) GetIndexBinarly(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -2979,7 +2979,7 @@ func (c *Client) GetIndexBitdefender(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("bitdefender"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -2990,7 +2990,7 @@ func (c *Client) GetIndexBitdefender(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3019,7 +3019,7 @@ func (c *Client) GetIndexBlackberry(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("blackberry"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3030,7 +3030,7 @@ func (c *Client) GetIndexBlackberry(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3059,7 +3059,7 @@ func (c *Client) GetIndexBls(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("bls"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3070,7 +3070,7 @@ func (c *Client) GetIndexBls(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3099,7 +3099,7 @@ func (c *Client) GetIndexBosch(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("bosch"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3110,7 +3110,7 @@ func (c *Client) GetIndexBosch(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3139,7 +3139,7 @@ func (c *Client) GetIndexBostonScientific(queryParameters ...IndexQueryParameter
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("boston-scientific"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3150,7 +3150,7 @@ func (c *Client) GetIndexBostonScientific(queryParameters ...IndexQueryParameter
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3179,7 +3179,7 @@ func (c *Client) GetIndexBotnets(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("botnets"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3190,7 +3190,7 @@ func (c *Client) GetIndexBotnets(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3219,7 +3219,7 @@ func (c *Client) GetIndexCaCyberCentre(queryParameters ...IndexQueryParameters) 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ca-cyber-centre"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3230,7 +3230,7 @@ func (c *Client) GetIndexCaCyberCentre(queryParameters ...IndexQueryParameters) 
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3259,7 +3259,7 @@ func (c *Client) GetIndexCanvas(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("canvas"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3270,7 +3270,7 @@ func (c *Client) GetIndexCanvas(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3299,7 +3299,7 @@ func (c *Client) GetIndexCarestream(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("carestream"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3310,7 +3310,7 @@ func (c *Client) GetIndexCarestream(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3339,7 +3339,7 @@ func (c *Client) GetIndexCargo(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("cargo"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3350,7 +3350,7 @@ func (c *Client) GetIndexCargo(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3379,7 +3379,7 @@ func (c *Client) GetIndexCarrier(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("carrier"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3390,7 +3390,7 @@ func (c *Client) GetIndexCarrier(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3419,7 +3419,7 @@ func (c *Client) GetIndexCblMariner(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("cbl-mariner"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3430,7 +3430,7 @@ func (c *Client) GetIndexCblMariner(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3459,7 +3459,7 @@ func (c *Client) GetIndexCentos(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("centos"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3470,7 +3470,7 @@ func (c *Client) GetIndexCentos(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3499,7 +3499,7 @@ func (c *Client) GetIndexCertBe(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("cert-be"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3510,7 +3510,7 @@ func (c *Client) GetIndexCertBe(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3539,7 +3539,7 @@ func (c *Client) GetIndexCertIn(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("cert-in"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3550,7 +3550,7 @@ func (c *Client) GetIndexCertIn(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3579,7 +3579,7 @@ func (c *Client) GetIndexCertIrSecurityAlerts(queryParameters ...IndexQueryParam
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("cert-ir-security-alerts"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3590,7 +3590,7 @@ func (c *Client) GetIndexCertIrSecurityAlerts(queryParameters ...IndexQueryParam
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3619,7 +3619,7 @@ func (c *Client) GetIndexCertSe(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("cert-se"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3630,7 +3630,7 @@ func (c *Client) GetIndexCertSe(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3659,7 +3659,7 @@ func (c *Client) GetIndexCertUa(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("cert-ua"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3670,7 +3670,7 @@ func (c *Client) GetIndexCertUa(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3699,7 +3699,7 @@ func (c *Client) GetIndexCerteu(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("certeu"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3710,7 +3710,7 @@ func (c *Client) GetIndexCerteu(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3739,7 +3739,7 @@ func (c *Client) GetIndexCertfr(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("certfr"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3750,7 +3750,7 @@ func (c *Client) GetIndexCertfr(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3779,7 +3779,7 @@ func (c *Client) GetIndexChainguard(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("chainguard"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3790,7 +3790,7 @@ func (c *Client) GetIndexChainguard(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3819,7 +3819,7 @@ func (c *Client) GetIndexCheckpoint(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("checkpoint"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3830,7 +3830,7 @@ func (c *Client) GetIndexCheckpoint(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3859,7 +3859,7 @@ func (c *Client) GetIndexChrome(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("chrome"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3870,7 +3870,7 @@ func (c *Client) GetIndexChrome(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3899,7 +3899,7 @@ func (c *Client) GetIndexCisaAlerts(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("cisa-alerts"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3910,7 +3910,7 @@ func (c *Client) GetIndexCisaAlerts(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3939,7 +3939,7 @@ func (c *Client) GetIndexCisaKev(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("cisa-kev"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3950,7 +3950,7 @@ func (c *Client) GetIndexCisaKev(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -3979,7 +3979,7 @@ func (c *Client) GetIndexCisco(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("cisco"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -3990,7 +3990,7 @@ func (c *Client) GetIndexCisco(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4018,7 +4018,7 @@ func (c *Client) GetIndexCiscoCsaf(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("cisco-csaf"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4029,7 +4029,7 @@ func (c *Client) GetIndexCiscoCsaf(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4058,7 +4058,7 @@ func (c *Client) GetIndexCiscoTalos(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("cisco-talos"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4069,7 +4069,7 @@ func (c *Client) GetIndexCiscoTalos(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4098,7 +4098,7 @@ func (c *Client) GetIndexCitrix(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("citrix"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4109,7 +4109,7 @@ func (c *Client) GetIndexCitrix(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4138,7 +4138,7 @@ func (c *Client) GetIndexClaroty(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("claroty"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4149,7 +4149,7 @@ func (c *Client) GetIndexClaroty(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4178,7 +4178,7 @@ func (c *Client) GetIndexCloudbees(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("cloudbees"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4189,7 +4189,7 @@ func (c *Client) GetIndexCloudbees(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4218,7 +4218,7 @@ func (c *Client) GetIndexCloudvulndb(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("cloudvulndb"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4229,7 +4229,7 @@ func (c *Client) GetIndexCloudvulndb(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4258,7 +4258,7 @@ func (c *Client) GetIndexCnnvd(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("cnnvd"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4269,7 +4269,7 @@ func (c *Client) GetIndexCnnvd(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4298,7 +4298,7 @@ func (c *Client) GetIndexCnvdBulletins(queryParameters ...IndexQueryParameters) 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("cnvd-bulletins"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4309,7 +4309,7 @@ func (c *Client) GetIndexCnvdBulletins(queryParameters ...IndexQueryParameters) 
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4338,7 +4338,7 @@ func (c *Client) GetIndexCnvdFlaws(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("cnvd-flaws"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4349,7 +4349,7 @@ func (c *Client) GetIndexCnvdFlaws(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4378,7 +4378,7 @@ func (c *Client) GetIndexCocoapods(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("cocoapods"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4389,7 +4389,7 @@ func (c *Client) GetIndexCocoapods(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4418,7 +4418,7 @@ func (c *Client) GetIndexCodesys(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("codesys"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4429,7 +4429,7 @@ func (c *Client) GetIndexCodesys(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4458,7 +4458,7 @@ func (c *Client) GetIndexCompassSecurity(queryParameters ...IndexQueryParameters
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("compass-security"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4469,7 +4469,7 @@ func (c *Client) GetIndexCompassSecurity(queryParameters ...IndexQueryParameters
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4498,7 +4498,7 @@ func (c *Client) GetIndexComposer(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("composer"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4509,7 +4509,7 @@ func (c *Client) GetIndexComposer(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4538,7 +4538,7 @@ func (c *Client) GetIndexConan(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("conan"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4549,7 +4549,7 @@ func (c *Client) GetIndexConan(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4577,7 +4577,7 @@ func (c *Client) GetIndexCoreimpact(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("coreimpact"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4588,7 +4588,7 @@ func (c *Client) GetIndexCoreimpact(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4617,7 +4617,7 @@ func (c *Client) GetIndexCrestron(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("crestron"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4628,7 +4628,7 @@ func (c *Client) GetIndexCrestron(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4657,7 +4657,7 @@ func (c *Client) GetIndexCurl(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("curl"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4668,7 +4668,7 @@ func (c *Client) GetIndexCurl(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4697,7 +4697,7 @@ func (c *Client) GetIndexCwe(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("cwe"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4708,7 +4708,7 @@ func (c *Client) GetIndexCwe(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4737,7 +4737,7 @@ func (c *Client) GetIndexDahua(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("dahua"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4748,7 +4748,7 @@ func (c *Client) GetIndexDahua(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4777,7 +4777,7 @@ func (c *Client) GetIndexDassault(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("dassault"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4788,7 +4788,7 @@ func (c *Client) GetIndexDassault(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4817,7 +4817,7 @@ func (c *Client) GetIndexDebian(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("debian"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4828,7 +4828,7 @@ func (c *Client) GetIndexDebian(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4857,7 +4857,7 @@ func (c *Client) GetIndexDebianDsa(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("debian-dsa"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4868,7 +4868,7 @@ func (c *Client) GetIndexDebianDsa(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4897,7 +4897,7 @@ func (c *Client) GetIndexDell(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("dell"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4908,7 +4908,7 @@ func (c *Client) GetIndexDell(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4937,7 +4937,7 @@ func (c *Client) GetIndexDelta(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("delta"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4948,7 +4948,7 @@ func (c *Client) GetIndexDelta(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -4977,7 +4977,7 @@ func (c *Client) GetIndexDjango(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("django"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -4988,7 +4988,7 @@ func (c *Client) GetIndexDjango(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5017,7 +5017,7 @@ func (c *Client) GetIndexDnn(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("dnn"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5028,7 +5028,7 @@ func (c *Client) GetIndexDnn(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5057,7 +5057,7 @@ func (c *Client) GetIndexDotcms(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("dotcms"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5068,7 +5068,7 @@ func (c *Client) GetIndexDotcms(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5097,7 +5097,7 @@ func (c *Client) GetIndexDragos(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("dragos"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5108,7 +5108,7 @@ func (c *Client) GetIndexDragos(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5137,7 +5137,7 @@ func (c *Client) GetIndexDraytek(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("draytek"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5148,7 +5148,7 @@ func (c *Client) GetIndexDraytek(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5176,7 +5176,7 @@ func (c *Client) GetIndexDrupal(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("drupal"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5187,7 +5187,7 @@ func (c *Client) GetIndexDrupal(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5216,7 +5216,7 @@ func (c *Client) GetIndexEaton(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("eaton"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5227,7 +5227,7 @@ func (c *Client) GetIndexEaton(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5256,7 +5256,7 @@ func (c *Client) GetIndexElastic(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("elastic"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5267,7 +5267,7 @@ func (c *Client) GetIndexElastic(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5296,7 +5296,7 @@ func (c *Client) GetIndexElspec(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("elspec"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5307,7 +5307,7 @@ func (c *Client) GetIndexElspec(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5336,7 +5336,7 @@ func (c *Client) GetIndexEmergingThreatsSnort(queryParameters ...IndexQueryParam
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("emerging-threats-snort"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5347,7 +5347,7 @@ func (c *Client) GetIndexEmergingThreatsSnort(queryParameters ...IndexQueryParam
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5376,7 +5376,7 @@ func (c *Client) GetIndexEmerson(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("emerson"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5387,7 +5387,7 @@ func (c *Client) GetIndexEmerson(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5415,7 +5415,7 @@ func (c *Client) GetIndexEndoflife(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("endoflife"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5426,7 +5426,7 @@ func (c *Client) GetIndexEndoflife(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5455,7 +5455,7 @@ func (c *Client) GetIndexEol(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("eol"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5466,7 +5466,7 @@ func (c *Client) GetIndexEol(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5494,7 +5494,7 @@ func (c *Client) GetIndexEolMicrosoft(queryParameters ...IndexQueryParameters) (
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("eol-microsoft"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5505,7 +5505,7 @@ func (c *Client) GetIndexEolMicrosoft(queryParameters ...IndexQueryParameters) (
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5534,7 +5534,7 @@ func (c *Client) GetIndexEpss(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("epss"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5545,7 +5545,7 @@ func (c *Client) GetIndexEpss(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5574,7 +5574,7 @@ func (c *Client) GetIndexExodusIntel(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("exodus-intel"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5585,7 +5585,7 @@ func (c *Client) GetIndexExodusIntel(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5614,7 +5614,7 @@ func (c *Client) GetIndexExploitChains(queryParameters ...IndexQueryParameters) 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("exploit-chains"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5625,7 +5625,7 @@ func (c *Client) GetIndexExploitChains(queryParameters ...IndexQueryParameters) 
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5654,7 +5654,7 @@ func (c *Client) GetIndexExploitdb(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("exploitdb"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5665,7 +5665,7 @@ func (c *Client) GetIndexExploitdb(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5694,7 +5694,7 @@ func (c *Client) GetIndexExploits(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("exploits"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5705,7 +5705,7 @@ func (c *Client) GetIndexExploits(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5733,7 +5733,7 @@ func (c *Client) GetIndexExploitsChangelog(queryParameters ...IndexQueryParamete
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("exploits-changelog"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5744,7 +5744,7 @@ func (c *Client) GetIndexExploitsChangelog(queryParameters ...IndexQueryParamete
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5773,7 +5773,7 @@ func (c *Client) GetIndexFSecure(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("f-secure"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5784,7 +5784,7 @@ func (c *Client) GetIndexFSecure(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5812,7 +5812,7 @@ func (c *Client) GetIndexF5(queryParameters ...IndexQueryParameters) (responseJS
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("f5"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5823,7 +5823,7 @@ func (c *Client) GetIndexF5(queryParameters ...IndexQueryParameters) (responseJS
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5852,7 +5852,7 @@ func (c *Client) GetIndexFanuc(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("fanuc"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5863,7 +5863,7 @@ func (c *Client) GetIndexFanuc(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5892,7 +5892,7 @@ func (c *Client) GetIndexFastly(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("fastly"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5903,7 +5903,7 @@ func (c *Client) GetIndexFastly(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5932,7 +5932,7 @@ func (c *Client) GetIndexFedora(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("fedora"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5943,7 +5943,7 @@ func (c *Client) GetIndexFedora(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -5972,7 +5972,7 @@ func (c *Client) GetIndexFilecloud(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("filecloud"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -5983,7 +5983,7 @@ func (c *Client) GetIndexFilecloud(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6011,7 +6011,7 @@ func (c *Client) GetIndexFilezilla(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("filezilla"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6022,7 +6022,7 @@ func (c *Client) GetIndexFilezilla(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6051,7 +6051,7 @@ func (c *Client) GetIndexFlattSecurity(queryParameters ...IndexQueryParameters) 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("flatt-security"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6062,7 +6062,7 @@ func (c *Client) GetIndexFlattSecurity(queryParameters ...IndexQueryParameters) 
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6091,7 +6091,7 @@ func (c *Client) GetIndexForgerock(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("forgerock"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6102,7 +6102,7 @@ func (c *Client) GetIndexForgerock(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6131,7 +6131,7 @@ func (c *Client) GetIndexFortinet(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("fortinet"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6142,7 +6142,7 @@ func (c *Client) GetIndexFortinet(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6170,7 +6170,7 @@ func (c *Client) GetIndexFortinetIps(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("fortinet-ips"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6181,7 +6181,7 @@ func (c *Client) GetIndexFortinetIps(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6210,7 +6210,7 @@ func (c *Client) GetIndexFoxit(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("foxit"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6221,7 +6221,7 @@ func (c *Client) GetIndexFoxit(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6250,7 +6250,7 @@ func (c *Client) GetIndexFreebsd(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("freebsd"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6261,7 +6261,7 @@ func (c *Client) GetIndexFreebsd(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6290,7 +6290,7 @@ func (c *Client) GetIndexGallagher(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("gallagher"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6301,7 +6301,7 @@ func (c *Client) GetIndexGallagher(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6330,7 +6330,7 @@ func (c *Client) GetIndexGcp(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("gcp"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6341,7 +6341,7 @@ func (c *Client) GetIndexGcp(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6370,7 +6370,7 @@ func (c *Client) GetIndexGeGas(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ge-gas"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6381,7 +6381,7 @@ func (c *Client) GetIndexGeGas(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6410,7 +6410,7 @@ func (c *Client) GetIndexGeHealthcare(queryParameters ...IndexQueryParameters) (
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ge-healthcare"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6421,7 +6421,7 @@ func (c *Client) GetIndexGeHealthcare(queryParameters ...IndexQueryParameters) (
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6450,7 +6450,7 @@ func (c *Client) GetIndexGem(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("gem"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6461,7 +6461,7 @@ func (c *Client) GetIndexGem(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6490,7 +6490,7 @@ func (c *Client) GetIndexGenetec(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("genetec"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6501,7 +6501,7 @@ func (c *Client) GetIndexGenetec(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6530,7 +6530,7 @@ func (c *Client) GetIndexGigabyte(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("gigabyte"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6541,7 +6541,7 @@ func (c *Client) GetIndexGigabyte(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6570,7 +6570,7 @@ func (c *Client) GetIndexGiteeExploits(queryParameters ...IndexQueryParameters) 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("gitee-exploits"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6581,7 +6581,7 @@ func (c *Client) GetIndexGiteeExploits(queryParameters ...IndexQueryParameters) 
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6610,7 +6610,7 @@ func (c *Client) GetIndexGithubExploits(queryParameters ...IndexQueryParameters)
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("github-exploits"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6621,7 +6621,7 @@ func (c *Client) GetIndexGithubExploits(queryParameters ...IndexQueryParameters)
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6650,7 +6650,7 @@ func (c *Client) GetIndexGithubSecurityAdvisories(queryParameters ...IndexQueryP
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("github-security-advisories"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6661,7 +6661,7 @@ func (c *Client) GetIndexGithubSecurityAdvisories(queryParameters ...IndexQueryP
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6690,7 +6690,7 @@ func (c *Client) GetIndexGitlabAdvisoriesCommunity(queryParameters ...IndexQuery
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("gitlab-advisories-community"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6701,7 +6701,7 @@ func (c *Client) GetIndexGitlabAdvisoriesCommunity(queryParameters ...IndexQuery
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6730,7 +6730,7 @@ func (c *Client) GetIndexGitlabExploits(queryParameters ...IndexQueryParameters)
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("gitlab-exploits"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6741,7 +6741,7 @@ func (c *Client) GetIndexGitlabExploits(queryParameters ...IndexQueryParameters)
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6770,7 +6770,7 @@ func (c *Client) GetIndexGnutls(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("gnutls"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6781,7 +6781,7 @@ func (c *Client) GetIndexGnutls(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6810,7 +6810,7 @@ func (c *Client) GetIndexGolang(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("golang"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6821,7 +6821,7 @@ func (c *Client) GetIndexGolang(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6850,7 +6850,7 @@ func (c *Client) GetIndexGoogle0dayItw(queryParameters ...IndexQueryParameters) 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("google-0day-itw"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6861,7 +6861,7 @@ func (c *Client) GetIndexGoogle0dayItw(queryParameters ...IndexQueryParameters) 
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6890,7 +6890,7 @@ func (c *Client) GetIndexGoogleContainerOptimizedOs(queryParameters ...IndexQuer
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("google-container-optimized-os"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6901,7 +6901,7 @@ func (c *Client) GetIndexGoogleContainerOptimizedOs(queryParameters ...IndexQuer
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6930,7 +6930,7 @@ func (c *Client) GetIndexGrafana(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("grafana"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6941,7 +6941,7 @@ func (c *Client) GetIndexGrafana(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -6970,7 +6970,7 @@ func (c *Client) GetIndexGreynoiseMetadata(queryParameters ...IndexQueryParamete
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("greynoise-metadata"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -6981,7 +6981,7 @@ func (c *Client) GetIndexGreynoiseMetadata(queryParameters ...IndexQueryParamete
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7010,7 +7010,7 @@ func (c *Client) GetIndexHackage(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("hackage"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7021,7 +7021,7 @@ func (c *Client) GetIndexHackage(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7050,7 +7050,7 @@ func (c *Client) GetIndexHarmonyos(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("harmonyos"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7061,7 +7061,7 @@ func (c *Client) GetIndexHarmonyos(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7090,7 +7090,7 @@ func (c *Client) GetIndexHashicorp(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("hashicorp"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7101,7 +7101,7 @@ func (c *Client) GetIndexHashicorp(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7130,7 +7130,7 @@ func (c *Client) GetIndexHaskellSadb(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("haskell-sadb"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7141,7 +7141,7 @@ func (c *Client) GetIndexHaskellSadb(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7170,7 +7170,7 @@ func (c *Client) GetIndexHcl(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("hcl"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7181,7 +7181,7 @@ func (c *Client) GetIndexHcl(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7210,7 +7210,7 @@ func (c *Client) GetIndexHex(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("hex"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7221,7 +7221,7 @@ func (c *Client) GetIndexHex(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7250,7 +7250,7 @@ func (c *Client) GetIndexHikvision(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("hikvision"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7261,7 +7261,7 @@ func (c *Client) GetIndexHikvision(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7290,7 +7290,7 @@ func (c *Client) GetIndexHillrom(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("hillrom"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7301,7 +7301,7 @@ func (c *Client) GetIndexHillrom(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7330,7 +7330,7 @@ func (c *Client) GetIndexHitachi(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("hitachi"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7341,7 +7341,7 @@ func (c *Client) GetIndexHitachi(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7370,7 +7370,7 @@ func (c *Client) GetIndexHitachiEnergy(queryParameters ...IndexQueryParameters) 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("hitachi-energy"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7381,7 +7381,7 @@ func (c *Client) GetIndexHitachiEnergy(queryParameters ...IndexQueryParameters) 
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7410,7 +7410,7 @@ func (c *Client) GetIndexHkcert(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("hkcert"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7421,7 +7421,7 @@ func (c *Client) GetIndexHkcert(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7450,7 +7450,7 @@ func (c *Client) GetIndexHoneywell(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("honeywell"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7461,7 +7461,7 @@ func (c *Client) GetIndexHoneywell(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7490,7 +7490,7 @@ func (c *Client) GetIndexHp(queryParameters ...IndexQueryParameters) (responseJS
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("hp"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7501,7 +7501,7 @@ func (c *Client) GetIndexHp(queryParameters ...IndexQueryParameters) (responseJS
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7529,7 +7529,7 @@ func (c *Client) GetIndexHpe(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("hpe"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7540,7 +7540,7 @@ func (c *Client) GetIndexHpe(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7569,7 +7569,7 @@ func (c *Client) GetIndexHuaweiEuleros(queryParameters ...IndexQueryParameters) 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("huawei-euleros"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7580,7 +7580,7 @@ func (c *Client) GetIndexHuaweiEuleros(queryParameters ...IndexQueryParameters) 
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7609,7 +7609,7 @@ func (c *Client) GetIndexHuaweiIps(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("huawei-ips"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7620,7 +7620,7 @@ func (c *Client) GetIndexHuaweiIps(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7649,7 +7649,7 @@ func (c *Client) GetIndexHuaweiPsirt(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("huawei-psirt"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7660,7 +7660,7 @@ func (c *Client) GetIndexHuaweiPsirt(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7689,7 +7689,7 @@ func (c *Client) GetIndexIava(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("iava"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7700,7 +7700,7 @@ func (c *Client) GetIndexIava(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7729,7 +7729,7 @@ func (c *Client) GetIndexIbm(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ibm"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7740,7 +7740,7 @@ func (c *Client) GetIndexIbm(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7769,7 +7769,7 @@ func (c *Client) GetIndexIdemia(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("idemia"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7780,7 +7780,7 @@ func (c *Client) GetIndexIdemia(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7809,7 +7809,7 @@ func (c *Client) GetIndexIlAlerts(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("il-alerts"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7820,7 +7820,7 @@ func (c *Client) GetIndexIlAlerts(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7849,7 +7849,7 @@ func (c *Client) GetIndexIlVulnerabilities(queryParameters ...IndexQueryParamete
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("il-vulnerabilities"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7860,7 +7860,7 @@ func (c *Client) GetIndexIlVulnerabilities(queryParameters ...IndexQueryParamete
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7889,7 +7889,7 @@ func (c *Client) GetIndexIncibe(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("incibe"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7900,7 +7900,7 @@ func (c *Client) GetIndexIncibe(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7929,7 +7929,7 @@ func (c *Client) GetIndexInitialAccess(queryParameters ...IndexQueryParameters) 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("initial-access"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7940,7 +7940,7 @@ func (c *Client) GetIndexInitialAccess(queryParameters ...IndexQueryParameters) 
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -7969,7 +7969,7 @@ func (c *Client) GetIndexInitialAccessGit(queryParameters ...IndexQueryParameter
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("initial-access-git"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -7980,7 +7980,7 @@ func (c *Client) GetIndexInitialAccessGit(queryParameters ...IndexQueryParameter
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8009,7 +8009,7 @@ func (c *Client) GetIndexIntel(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("intel"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8020,7 +8020,7 @@ func (c *Client) GetIndexIntel(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8049,7 +8049,7 @@ func (c *Client) GetIndexIpintel10d(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ipintel-10d"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8060,7 +8060,7 @@ func (c *Client) GetIndexIpintel10d(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8089,7 +8089,7 @@ func (c *Client) GetIndexIpintel30d(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ipintel-30d"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8100,7 +8100,7 @@ func (c *Client) GetIndexIpintel30d(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8129,7 +8129,7 @@ func (c *Client) GetIndexIpintel3d(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ipintel-3d"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8140,7 +8140,7 @@ func (c *Client) GetIndexIpintel3d(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8169,7 +8169,7 @@ func (c *Client) GetIndexIpintel90d(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ipintel-90d"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8180,7 +8180,7 @@ func (c *Client) GetIndexIpintel90d(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8209,7 +8209,7 @@ func (c *Client) GetIndexIstio(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("istio"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8220,7 +8220,7 @@ func (c *Client) GetIndexIstio(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8249,7 +8249,7 @@ func (c *Client) GetIndexIvanti(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ivanti"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8260,7 +8260,7 @@ func (c *Client) GetIndexIvanti(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8289,7 +8289,7 @@ func (c *Client) GetIndexIvantiRss(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ivanti-rss"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8300,7 +8300,7 @@ func (c *Client) GetIndexIvantiRss(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8329,7 +8329,7 @@ func (c *Client) GetIndexJenkins(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("jenkins"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8340,7 +8340,7 @@ func (c *Client) GetIndexJenkins(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8369,7 +8369,7 @@ func (c *Client) GetIndexJetbrains(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("jetbrains"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8380,7 +8380,7 @@ func (c *Client) GetIndexJetbrains(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8409,7 +8409,7 @@ func (c *Client) GetIndexJfrog(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("jfrog"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8420,7 +8420,7 @@ func (c *Client) GetIndexJfrog(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8449,7 +8449,7 @@ func (c *Client) GetIndexJnj(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("jnj"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8460,7 +8460,7 @@ func (c *Client) GetIndexJnj(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8488,7 +8488,7 @@ func (c *Client) GetIndexJvn(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("jvn"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8499,7 +8499,7 @@ func (c *Client) GetIndexJvn(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8528,7 +8528,7 @@ func (c *Client) GetIndexJvndb(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("jvndb"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8539,7 +8539,7 @@ func (c *Client) GetIndexJvndb(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8568,7 +8568,7 @@ func (c *Client) GetIndexKasperskyIcsCert(queryParameters ...IndexQueryParameter
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("kaspersky-ics-cert"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8579,7 +8579,7 @@ func (c *Client) GetIndexKasperskyIcsCert(queryParameters ...IndexQueryParameter
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8608,7 +8608,7 @@ func (c *Client) GetIndexKorelogic(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("korelogic"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8619,7 +8619,7 @@ func (c *Client) GetIndexKorelogic(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8648,7 +8648,7 @@ func (c *Client) GetIndexKrcertSecurityNotices(queryParameters ...IndexQueryPara
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("krcert-security-notices"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8659,7 +8659,7 @@ func (c *Client) GetIndexKrcertSecurityNotices(queryParameters ...IndexQueryPara
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8688,7 +8688,7 @@ func (c *Client) GetIndexKrcertVulnerabilities(queryParameters ...IndexQueryPara
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("krcert-vulnerabilities"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8699,7 +8699,7 @@ func (c *Client) GetIndexKrcertVulnerabilities(queryParameters ...IndexQueryPara
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8728,7 +8728,7 @@ func (c *Client) GetIndexKubernetes(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("kubernetes"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8739,7 +8739,7 @@ func (c *Client) GetIndexKubernetes(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8768,7 +8768,7 @@ func (c *Client) GetIndexLenovo(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("lenovo"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8779,7 +8779,7 @@ func (c *Client) GetIndexLenovo(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8808,7 +8808,7 @@ func (c *Client) GetIndexLexmark(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("lexmark"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8819,7 +8819,7 @@ func (c *Client) GetIndexLexmark(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8848,7 +8848,7 @@ func (c *Client) GetIndexLg(queryParameters ...IndexQueryParameters) (responseJS
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("lg"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8859,7 +8859,7 @@ func (c *Client) GetIndexLg(queryParameters ...IndexQueryParameters) (responseJS
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8888,7 +8888,7 @@ func (c *Client) GetIndexLibreOffice(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("libre-office"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8899,7 +8899,7 @@ func (c *Client) GetIndexLibreOffice(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8928,7 +8928,7 @@ func (c *Client) GetIndexLinux(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("linux"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8939,7 +8939,7 @@ func (c *Client) GetIndexLinux(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -8968,7 +8968,7 @@ func (c *Client) GetIndexMFiles(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("m-files"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -8979,7 +8979,7 @@ func (c *Client) GetIndexMFiles(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9008,7 +9008,7 @@ func (c *Client) GetIndexMacert(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("macert"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9019,7 +9019,7 @@ func (c *Client) GetIndexMacert(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9048,7 +9048,7 @@ func (c *Client) GetIndexManageengine(queryParameters ...IndexQueryParameters) (
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("manageengine"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9059,7 +9059,7 @@ func (c *Client) GetIndexManageengine(queryParameters ...IndexQueryParameters) (
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9088,7 +9088,7 @@ func (c *Client) GetIndexMaven(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("maven"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9099,7 +9099,7 @@ func (c *Client) GetIndexMaven(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9128,7 +9128,7 @@ func (c *Client) GetIndexMbedTls(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("mbed-tls"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9139,7 +9139,7 @@ func (c *Client) GetIndexMbedTls(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9167,7 +9167,7 @@ func (c *Client) GetIndexMcafee(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("mcafee"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9178,7 +9178,7 @@ func (c *Client) GetIndexMcafee(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9207,7 +9207,7 @@ func (c *Client) GetIndexMediatek(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("mediatek"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9218,7 +9218,7 @@ func (c *Client) GetIndexMediatek(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9247,7 +9247,7 @@ func (c *Client) GetIndexMedtronic(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("medtronic"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9258,7 +9258,7 @@ func (c *Client) GetIndexMedtronic(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9287,7 +9287,7 @@ func (c *Client) GetIndexMendix(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("mendix"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9298,7 +9298,7 @@ func (c *Client) GetIndexMendix(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9327,7 +9327,7 @@ func (c *Client) GetIndexMetasploit(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("metasploit"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9338,7 +9338,7 @@ func (c *Client) GetIndexMetasploit(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9367,7 +9367,7 @@ func (c *Client) GetIndexMicrosoftCvrf(queryParameters ...IndexQueryParameters) 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("microsoft-cvrf"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9378,7 +9378,7 @@ func (c *Client) GetIndexMicrosoftCvrf(queryParameters ...IndexQueryParameters) 
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9407,7 +9407,7 @@ func (c *Client) GetIndexMicrosoftKb(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("microsoft-kb"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9418,7 +9418,7 @@ func (c *Client) GetIndexMicrosoftKb(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9447,7 +9447,7 @@ func (c *Client) GetIndexMikrotik(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("mikrotik"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9458,7 +9458,7 @@ func (c *Client) GetIndexMikrotik(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9487,7 +9487,7 @@ func (c *Client) GetIndexMindray(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("mindray"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9498,7 +9498,7 @@ func (c *Client) GetIndexMindray(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9527,7 +9527,7 @@ func (c *Client) GetIndexMispThreatActors(queryParameters ...IndexQueryParameter
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("misp-threat-actors"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9538,7 +9538,7 @@ func (c *Client) GetIndexMispThreatActors(queryParameters ...IndexQueryParameter
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9567,7 +9567,7 @@ func (c *Client) GetIndexMitel(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("mitel"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9578,7 +9578,7 @@ func (c *Client) GetIndexMitel(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9607,7 +9607,7 @@ func (c *Client) GetIndexMitreAttackCve(queryParameters ...IndexQueryParameters)
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("mitre-attack-cve"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9618,7 +9618,7 @@ func (c *Client) GetIndexMitreAttackCve(queryParameters ...IndexQueryParameters)
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9647,7 +9647,7 @@ func (c *Client) GetIndexMitreCvelistV5(queryParameters ...IndexQueryParameters)
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("mitre-cvelist-v5"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9658,7 +9658,7 @@ func (c *Client) GetIndexMitreCvelistV5(queryParameters ...IndexQueryParameters)
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9687,7 +9687,7 @@ func (c *Client) GetIndexMitsubishiElectric(queryParameters ...IndexQueryParamet
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("mitsubishi-electric"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9698,7 +9698,7 @@ func (c *Client) GetIndexMitsubishiElectric(queryParameters ...IndexQueryParamet
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9727,7 +9727,7 @@ func (c *Client) GetIndexMongodb(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("mongodb"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9738,7 +9738,7 @@ func (c *Client) GetIndexMongodb(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9767,7 +9767,7 @@ func (c *Client) GetIndexMoxa(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("moxa"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9778,7 +9778,7 @@ func (c *Client) GetIndexMoxa(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9807,7 +9807,7 @@ func (c *Client) GetIndexMozilla(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("mozilla"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9818,7 +9818,7 @@ func (c *Client) GetIndexMozilla(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9847,7 +9847,7 @@ func (c *Client) GetIndexNaver(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("naver"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9858,7 +9858,7 @@ func (c *Client) GetIndexNaver(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9886,7 +9886,7 @@ func (c *Client) GetIndexNcsc(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ncsc"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9897,7 +9897,7 @@ func (c *Client) GetIndexNcsc(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9925,7 +9925,7 @@ func (c *Client) GetIndexNcscCves(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ncsc-cves"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9936,7 +9936,7 @@ func (c *Client) GetIndexNcscCves(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -9965,7 +9965,7 @@ func (c *Client) GetIndexNec(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("nec"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -9976,7 +9976,7 @@ func (c *Client) GetIndexNec(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10005,7 +10005,7 @@ func (c *Client) GetIndexNetapp(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("netapp"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10016,7 +10016,7 @@ func (c *Client) GetIndexNetapp(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10044,7 +10044,7 @@ func (c *Client) GetIndexNetatalk(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("netatalk"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10055,7 +10055,7 @@ func (c *Client) GetIndexNetatalk(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10084,7 +10084,7 @@ func (c *Client) GetIndexNetgate(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("netgate"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10095,7 +10095,7 @@ func (c *Client) GetIndexNetgate(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10124,7 +10124,7 @@ func (c *Client) GetIndexNetgear(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("netgear"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10135,7 +10135,7 @@ func (c *Client) GetIndexNetgear(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10164,7 +10164,7 @@ func (c *Client) GetIndexNetskope(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("netskope"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10175,7 +10175,7 @@ func (c *Client) GetIndexNetskope(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10204,7 +10204,7 @@ func (c *Client) GetIndexNginx(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("nginx"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10215,7 +10215,7 @@ func (c *Client) GetIndexNginx(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10244,7 +10244,7 @@ func (c *Client) GetIndexNhs(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("nhs"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10255,7 +10255,7 @@ func (c *Client) GetIndexNhs(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10284,7 +10284,7 @@ func (c *Client) GetIndexNi(queryParameters ...IndexQueryParameters) (responseJS
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ni"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10295,7 +10295,7 @@ func (c *Client) GetIndexNi(queryParameters ...IndexQueryParameters) (responseJS
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10324,7 +10324,7 @@ func (c *Client) GetIndexNistNvd(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("nist-nvd"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10335,7 +10335,7 @@ func (c *Client) GetIndexNistNvd(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10364,7 +10364,7 @@ func (c *Client) GetIndexNistNvd2(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("nist-nvd2"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10375,7 +10375,7 @@ func (c *Client) GetIndexNistNvd2(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10404,7 +10404,7 @@ func (c *Client) GetIndexNistNvd2Cpematch(queryParameters ...IndexQueryParameter
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("nist-nvd2-cpematch"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10415,7 +10415,7 @@ func (c *Client) GetIndexNistNvd2Cpematch(queryParameters ...IndexQueryParameter
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10443,7 +10443,7 @@ func (c *Client) GetIndexNistNvd2Sources(queryParameters ...IndexQueryParameters
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("nist-nvd2-sources"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10454,7 +10454,7 @@ func (c *Client) GetIndexNistNvd2Sources(queryParameters ...IndexQueryParameters
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10483,7 +10483,7 @@ func (c *Client) GetIndexNodeSecurity(queryParameters ...IndexQueryParameters) (
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("node-security"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10494,7 +10494,7 @@ func (c *Client) GetIndexNodeSecurity(queryParameters ...IndexQueryParameters) (
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10523,7 +10523,7 @@ func (c *Client) GetIndexNodejs(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("nodejs"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10534,7 +10534,7 @@ func (c *Client) GetIndexNodejs(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10563,7 +10563,7 @@ func (c *Client) GetIndexNokia(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("nokia"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10574,7 +10574,7 @@ func (c *Client) GetIndexNokia(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10602,7 +10602,7 @@ func (c *Client) GetIndexNotepadplusplus(queryParameters ...IndexQueryParameters
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("notepadplusplus"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10613,7 +10613,7 @@ func (c *Client) GetIndexNotepadplusplus(queryParameters ...IndexQueryParameters
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10642,7 +10642,7 @@ func (c *Client) GetIndexNozomi(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("nozomi"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10653,7 +10653,7 @@ func (c *Client) GetIndexNozomi(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10682,7 +10682,7 @@ func (c *Client) GetIndexNpm(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("npm"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10693,7 +10693,7 @@ func (c *Client) GetIndexNpm(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10722,7 +10722,7 @@ func (c *Client) GetIndexNtp(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ntp"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10733,7 +10733,7 @@ func (c *Client) GetIndexNtp(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10762,7 +10762,7 @@ func (c *Client) GetIndexNuget(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("nuget"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10773,7 +10773,7 @@ func (c *Client) GetIndexNuget(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10802,7 +10802,7 @@ func (c *Client) GetIndexNvidia(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("nvidia"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10813,7 +10813,7 @@ func (c *Client) GetIndexNvidia(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10842,7 +10842,7 @@ func (c *Client) GetIndexNzAdvisories(queryParameters ...IndexQueryParameters) (
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("nz-advisories"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10853,7 +10853,7 @@ func (c *Client) GetIndexNzAdvisories(queryParameters ...IndexQueryParameters) (
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10882,7 +10882,7 @@ func (c *Client) GetIndexOctopusDeploy(queryParameters ...IndexQueryParameters) 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("octopus-deploy"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10893,7 +10893,7 @@ func (c *Client) GetIndexOctopusDeploy(queryParameters ...IndexQueryParameters) 
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10922,7 +10922,7 @@ func (c *Client) GetIndexOkta(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("okta"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10933,7 +10933,7 @@ func (c *Client) GetIndexOkta(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -10962,7 +10962,7 @@ func (c *Client) GetIndexOmron(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("omron"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -10973,7 +10973,7 @@ func (c *Client) GetIndexOmron(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11002,7 +11002,7 @@ func (c *Client) GetIndexOneE(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("one-e"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11013,7 +11013,7 @@ func (c *Client) GetIndexOneE(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11042,7 +11042,7 @@ func (c *Client) GetIndexOpam(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("opam"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11053,7 +11053,7 @@ func (c *Client) GetIndexOpam(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11082,7 +11082,7 @@ func (c *Client) GetIndexOpenCvdb(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("open-cvdb"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11093,7 +11093,7 @@ func (c *Client) GetIndexOpenCvdb(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11122,7 +11122,7 @@ func (c *Client) GetIndexOpenbsd(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("openbsd"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11133,7 +11133,7 @@ func (c *Client) GetIndexOpenbsd(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11162,7 +11162,7 @@ func (c *Client) GetIndexOpenjdk(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("openjdk"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11173,7 +11173,7 @@ func (c *Client) GetIndexOpenjdk(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11202,7 +11202,7 @@ func (c *Client) GetIndexOpenssh(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("openssh"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11213,7 +11213,7 @@ func (c *Client) GetIndexOpenssh(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11242,7 +11242,7 @@ func (c *Client) GetIndexOpensslSecadv(queryParameters ...IndexQueryParameters) 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("openssl-secadv"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11253,7 +11253,7 @@ func (c *Client) GetIndexOpensslSecadv(queryParameters ...IndexQueryParameters) 
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11282,7 +11282,7 @@ func (c *Client) GetIndexOpenstack(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("openstack"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11293,7 +11293,7 @@ func (c *Client) GetIndexOpenstack(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11322,7 +11322,7 @@ func (c *Client) GetIndexOpenwrt(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("openwrt"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11333,7 +11333,7 @@ func (c *Client) GetIndexOpenwrt(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11362,7 +11362,7 @@ func (c *Client) GetIndexOracle(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("oracle"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11373,7 +11373,7 @@ func (c *Client) GetIndexOracle(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11402,7 +11402,7 @@ func (c *Client) GetIndexOracleCpu(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("oracle-cpu"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11413,7 +11413,7 @@ func (c *Client) GetIndexOracleCpu(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11442,7 +11442,7 @@ func (c *Client) GetIndexOracleCpuCsaf(queryParameters ...IndexQueryParameters) 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("oracle-cpu-csaf"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11453,7 +11453,7 @@ func (c *Client) GetIndexOracleCpuCsaf(queryParameters ...IndexQueryParameters) 
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11482,7 +11482,7 @@ func (c *Client) GetIndexOsv(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("osv"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11493,7 +11493,7 @@ func (c *Client) GetIndexOsv(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11522,7 +11522,7 @@ func (c *Client) GetIndexOtrs(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("otrs"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11533,7 +11533,7 @@ func (c *Client) GetIndexOtrs(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11562,7 +11562,7 @@ func (c *Client) GetIndexOwncloud(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("owncloud"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11573,7 +11573,7 @@ func (c *Client) GetIndexOwncloud(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11601,7 +11601,7 @@ func (c *Client) GetIndexPacketstorm(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("packetstorm"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11612,7 +11612,7 @@ func (c *Client) GetIndexPacketstorm(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11641,7 +11641,7 @@ func (c *Client) GetIndexPalantir(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("palantir"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11652,7 +11652,7 @@ func (c *Client) GetIndexPalantir(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11681,7 +11681,7 @@ func (c *Client) GetIndexPaloAlto(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("palo-alto"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11692,7 +11692,7 @@ func (c *Client) GetIndexPaloAlto(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11721,7 +11721,7 @@ func (c *Client) GetIndexPanasonic(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("panasonic"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11732,7 +11732,7 @@ func (c *Client) GetIndexPanasonic(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11761,7 +11761,7 @@ func (c *Client) GetIndexPapercut(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("papercut"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11772,7 +11772,7 @@ func (c *Client) GetIndexPapercut(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11801,7 +11801,7 @@ func (c *Client) GetIndexPega(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("pega"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11812,7 +11812,7 @@ func (c *Client) GetIndexPega(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11841,7 +11841,7 @@ func (c *Client) GetIndexPhilips(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("philips"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11852,7 +11852,7 @@ func (c *Client) GetIndexPhilips(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11881,7 +11881,7 @@ func (c *Client) GetIndexPhoenixContact(queryParameters ...IndexQueryParameters)
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("phoenix-contact"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11892,7 +11892,7 @@ func (c *Client) GetIndexPhoenixContact(queryParameters ...IndexQueryParameters)
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11921,7 +11921,7 @@ func (c *Client) GetIndexPhpMyAdmin(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("php-my-admin"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11932,7 +11932,7 @@ func (c *Client) GetIndexPhpMyAdmin(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -11961,7 +11961,7 @@ func (c *Client) GetIndexPostgressql(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("postgressql"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -11972,7 +11972,7 @@ func (c *Client) GetIndexPostgressql(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12001,7 +12001,7 @@ func (c *Client) GetIndexPowerdns(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("powerdns"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12012,7 +12012,7 @@ func (c *Client) GetIndexPowerdns(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12041,7 +12041,7 @@ func (c *Client) GetIndexProgress(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("progress"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12052,7 +12052,7 @@ func (c *Client) GetIndexProgress(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12081,7 +12081,7 @@ func (c *Client) GetIndexProofpoint(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("proofpoint"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12092,7 +12092,7 @@ func (c *Client) GetIndexProofpoint(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12120,7 +12120,7 @@ func (c *Client) GetIndexPtc(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ptc"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12131,7 +12131,7 @@ func (c *Client) GetIndexPtc(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12160,7 +12160,7 @@ func (c *Client) GetIndexPub(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("pub"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12171,7 +12171,7 @@ func (c *Client) GetIndexPub(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12200,7 +12200,7 @@ func (c *Client) GetIndexPureStorage(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("pure-storage"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12211,7 +12211,7 @@ func (c *Client) GetIndexPureStorage(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12240,7 +12240,7 @@ func (c *Client) GetIndexPypaAdvisories(queryParameters ...IndexQueryParameters)
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("pypa-advisories"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12251,7 +12251,7 @@ func (c *Client) GetIndexPypaAdvisories(queryParameters ...IndexQueryParameters)
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12280,7 +12280,7 @@ func (c *Client) GetIndexPypi(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("pypi"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12291,7 +12291,7 @@ func (c *Client) GetIndexPypi(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12320,7 +12320,7 @@ func (c *Client) GetIndexQnap(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("qnap"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12331,7 +12331,7 @@ func (c *Client) GetIndexQnap(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12360,7 +12360,7 @@ func (c *Client) GetIndexQualcomm(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("qualcomm"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12371,7 +12371,7 @@ func (c *Client) GetIndexQualcomm(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12400,7 +12400,7 @@ func (c *Client) GetIndexQualys(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("qualys"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12411,7 +12411,7 @@ func (c *Client) GetIndexQualys(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12439,7 +12439,7 @@ func (c *Client) GetIndexQubesQsb(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("qubes-qsb"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12450,7 +12450,7 @@ func (c *Client) GetIndexQubesQsb(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12479,7 +12479,7 @@ func (c *Client) GetIndexRansomware(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ransomware"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12490,7 +12490,7 @@ func (c *Client) GetIndexRansomware(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12519,7 +12519,7 @@ func (c *Client) GetIndexRedhat(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("redhat"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12530,7 +12530,7 @@ func (c *Client) GetIndexRedhat(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12559,7 +12559,7 @@ func (c *Client) GetIndexRenesas(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("renesas"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12570,7 +12570,7 @@ func (c *Client) GetIndexRenesas(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12599,7 +12599,7 @@ func (c *Client) GetIndexRevive(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("revive"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12610,7 +12610,7 @@ func (c *Client) GetIndexRevive(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12639,7 +12639,7 @@ func (c *Client) GetIndexRoche(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("roche"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12650,7 +12650,7 @@ func (c *Client) GetIndexRoche(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12679,7 +12679,7 @@ func (c *Client) GetIndexRockwell(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("rockwell"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12690,7 +12690,7 @@ func (c *Client) GetIndexRockwell(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12719,7 +12719,7 @@ func (c *Client) GetIndexRocky(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("rocky"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12730,7 +12730,7 @@ func (c *Client) GetIndexRocky(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12759,7 +12759,7 @@ func (c *Client) GetIndexRockyErrata(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("rocky-errata"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12770,7 +12770,7 @@ func (c *Client) GetIndexRockyErrata(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12799,7 +12799,7 @@ func (c *Client) GetIndexRockyPurls(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("rocky-purls"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12810,7 +12810,7 @@ func (c *Client) GetIndexRockyPurls(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12838,7 +12838,7 @@ func (c *Client) GetIndexRsync(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("rsync"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12849,7 +12849,7 @@ func (c *Client) GetIndexRsync(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12878,7 +12878,7 @@ func (c *Client) GetIndexRuckus(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ruckus"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12889,7 +12889,7 @@ func (c *Client) GetIndexRuckus(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12918,7 +12918,7 @@ func (c *Client) GetIndexRustsecAdvisories(queryParameters ...IndexQueryParamete
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("rustsec-advisories"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12929,7 +12929,7 @@ func (c *Client) GetIndexRustsecAdvisories(queryParameters ...IndexQueryParamete
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12958,7 +12958,7 @@ func (c *Client) GetIndexSacert(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("sacert"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -12969,7 +12969,7 @@ func (c *Client) GetIndexSacert(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -12998,7 +12998,7 @@ func (c *Client) GetIndexSaint(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("saint"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13009,7 +13009,7 @@ func (c *Client) GetIndexSaint(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13038,7 +13038,7 @@ func (c *Client) GetIndexSalesforce(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("salesforce"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13049,7 +13049,7 @@ func (c *Client) GetIndexSalesforce(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13078,7 +13078,7 @@ func (c *Client) GetIndexSamba(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("samba"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13089,7 +13089,7 @@ func (c *Client) GetIndexSamba(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13118,7 +13118,7 @@ func (c *Client) GetIndexSap(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("sap"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13129,7 +13129,7 @@ func (c *Client) GetIndexSap(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13158,7 +13158,7 @@ func (c *Client) GetIndexSchneiderElectric(queryParameters ...IndexQueryParamete
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("schneider-electric"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13169,7 +13169,7 @@ func (c *Client) GetIndexSchneiderElectric(queryParameters ...IndexQueryParamete
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13198,7 +13198,7 @@ func (c *Client) GetIndexSecConsult(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("sec-consult"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13209,7 +13209,7 @@ func (c *Client) GetIndexSecConsult(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13237,7 +13237,7 @@ func (c *Client) GetIndexSecuritylab(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("securitylab"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13248,7 +13248,7 @@ func (c *Client) GetIndexSecuritylab(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13276,7 +13276,7 @@ func (c *Client) GetIndexSeebug(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("seebug"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13287,7 +13287,7 @@ func (c *Client) GetIndexSeebug(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13316,7 +13316,7 @@ func (c *Client) GetIndexSel(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("sel"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13327,7 +13327,7 @@ func (c *Client) GetIndexSel(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13356,7 +13356,7 @@ func (c *Client) GetIndexSentinelone(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("sentinelone"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13367,7 +13367,7 @@ func (c *Client) GetIndexSentinelone(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13396,7 +13396,7 @@ func (c *Client) GetIndexServicenow(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("servicenow"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13407,7 +13407,7 @@ func (c *Client) GetIndexServicenow(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13436,7 +13436,7 @@ func (c *Client) GetIndexShadowserverExploited(queryParameters ...IndexQueryPara
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("shadowserver-exploited"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13447,7 +13447,7 @@ func (c *Client) GetIndexShadowserverExploited(queryParameters ...IndexQueryPara
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13475,7 +13475,7 @@ func (c *Client) GetIndexShielder(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("shielder"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13486,7 +13486,7 @@ func (c *Client) GetIndexShielder(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13515,7 +13515,7 @@ func (c *Client) GetIndexSick(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("sick"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13526,7 +13526,7 @@ func (c *Client) GetIndexSick(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13555,7 +13555,7 @@ func (c *Client) GetIndexSiemens(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("siemens"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13566,7 +13566,7 @@ func (c *Client) GetIndexSiemens(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13595,7 +13595,7 @@ func (c *Client) GetIndexSierraWireless(queryParameters ...IndexQueryParameters)
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("sierra-wireless"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13606,7 +13606,7 @@ func (c *Client) GetIndexSierraWireless(queryParameters ...IndexQueryParameters)
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13635,7 +13635,7 @@ func (c *Client) GetIndexSigmahqSigmaRules(queryParameters ...IndexQueryParamete
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("sigmahq-sigma-rules"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13646,7 +13646,7 @@ func (c *Client) GetIndexSigmahqSigmaRules(queryParameters ...IndexQueryParamete
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13675,7 +13675,7 @@ func (c *Client) GetIndexSingcert(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("singcert"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13686,7 +13686,7 @@ func (c *Client) GetIndexSingcert(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13715,7 +13715,7 @@ func (c *Client) GetIndexSlackware(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("slackware"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13726,7 +13726,7 @@ func (c *Client) GetIndexSlackware(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13755,7 +13755,7 @@ func (c *Client) GetIndexSolarwinds(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("solarwinds"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13766,7 +13766,7 @@ func (c *Client) GetIndexSolarwinds(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13795,7 +13795,7 @@ func (c *Client) GetIndexSolr(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("solr"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13806,7 +13806,7 @@ func (c *Client) GetIndexSolr(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13834,7 +13834,7 @@ func (c *Client) GetIndexSonatype(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("sonatype"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13845,7 +13845,7 @@ func (c *Client) GetIndexSonatype(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13874,7 +13874,7 @@ func (c *Client) GetIndexSonicwall(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("sonicwall"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13885,7 +13885,7 @@ func (c *Client) GetIndexSonicwall(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13914,7 +13914,7 @@ func (c *Client) GetIndexSpacelabsHealthcare(queryParameters ...IndexQueryParame
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("spacelabs-healthcare"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13925,7 +13925,7 @@ func (c *Client) GetIndexSpacelabsHealthcare(queryParameters ...IndexQueryParame
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13954,7 +13954,7 @@ func (c *Client) GetIndexSplunk(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("splunk"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -13965,7 +13965,7 @@ func (c *Client) GetIndexSplunk(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -13994,7 +13994,7 @@ func (c *Client) GetIndexSpring(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("spring"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14005,7 +14005,7 @@ func (c *Client) GetIndexSpring(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14034,7 +14034,7 @@ func (c *Client) GetIndexSsd(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ssd"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14045,7 +14045,7 @@ func (c *Client) GetIndexSsd(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14074,7 +14074,7 @@ func (c *Client) GetIndexStormshield(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("stormshield"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14085,7 +14085,7 @@ func (c *Client) GetIndexStormshield(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14114,7 +14114,7 @@ func (c *Client) GetIndexStryker(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("stryker"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14125,7 +14125,7 @@ func (c *Client) GetIndexStryker(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14154,7 +14154,7 @@ func (c *Client) GetIndexSudo(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("sudo"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14165,7 +14165,7 @@ func (c *Client) GetIndexSudo(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14194,7 +14194,7 @@ func (c *Client) GetIndexSuse(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("suse"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14205,7 +14205,7 @@ func (c *Client) GetIndexSuse(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14233,7 +14233,7 @@ func (c *Client) GetIndexSuseSecurity(queryParameters ...IndexQueryParameters) (
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("suse-security"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14244,7 +14244,7 @@ func (c *Client) GetIndexSuseSecurity(queryParameters ...IndexQueryParameters) (
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14273,7 +14273,7 @@ func (c *Client) GetIndexSwift(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("swift"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14284,7 +14284,7 @@ func (c *Client) GetIndexSwift(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14313,7 +14313,7 @@ func (c *Client) GetIndexSwisslogHealthcare(queryParameters ...IndexQueryParamet
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("swisslog-healthcare"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14324,7 +14324,7 @@ func (c *Client) GetIndexSwisslogHealthcare(queryParameters ...IndexQueryParamet
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14353,7 +14353,7 @@ func (c *Client) GetIndexSymfony(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("symfony"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14364,7 +14364,7 @@ func (c *Client) GetIndexSymfony(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14393,7 +14393,7 @@ func (c *Client) GetIndexSynacktiv(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("synacktiv"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14404,7 +14404,7 @@ func (c *Client) GetIndexSynacktiv(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14433,7 +14433,7 @@ func (c *Client) GetIndexSyncrosoft(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("syncrosoft"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14444,7 +14444,7 @@ func (c *Client) GetIndexSyncrosoft(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14473,7 +14473,7 @@ func (c *Client) GetIndexSynology(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("synology"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14484,7 +14484,7 @@ func (c *Client) GetIndexSynology(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14512,7 +14512,7 @@ func (c *Client) GetIndexTailscale(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("tailscale"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14523,7 +14523,7 @@ func (c *Client) GetIndexTailscale(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14552,7 +14552,7 @@ func (c *Client) GetIndexTeamviewer(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("teamviewer"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14563,7 +14563,7 @@ func (c *Client) GetIndexTeamviewer(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14591,7 +14591,7 @@ func (c *Client) GetIndexTenableResearchAdvisories(queryParameters ...IndexQuery
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("tenable-research-advisories"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14602,7 +14602,7 @@ func (c *Client) GetIndexTenableResearchAdvisories(queryParameters ...IndexQuery
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14631,7 +14631,7 @@ func (c *Client) GetIndexTencent(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("tencent"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14642,7 +14642,7 @@ func (c *Client) GetIndexTencent(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14671,7 +14671,7 @@ func (c *Client) GetIndexThales(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("thales"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14682,7 +14682,7 @@ func (c *Client) GetIndexThales(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14711,7 +14711,7 @@ func (c *Client) GetIndexThemissinglink(queryParameters ...IndexQueryParameters)
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("themissinglink"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14722,7 +14722,7 @@ func (c *Client) GetIndexThemissinglink(queryParameters ...IndexQueryParameters)
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14751,7 +14751,7 @@ func (c *Client) GetIndexThreatActors(queryParameters ...IndexQueryParameters) (
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("threat-actors"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14762,7 +14762,7 @@ func (c *Client) GetIndexThreatActors(queryParameters ...IndexQueryParameters) (
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14791,7 +14791,7 @@ func (c *Client) GetIndexTi(queryParameters ...IndexQueryParameters) (responseJS
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ti"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14802,7 +14802,7 @@ func (c *Client) GetIndexTi(queryParameters ...IndexQueryParameters) (responseJS
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14831,7 +14831,7 @@ func (c *Client) GetIndexTibco(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("tibco"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14842,7 +14842,7 @@ func (c *Client) GetIndexTibco(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14871,7 +14871,7 @@ func (c *Client) GetIndexTpLink(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("tp-link"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14882,7 +14882,7 @@ func (c *Client) GetIndexTpLink(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14911,7 +14911,7 @@ func (c *Client) GetIndexTraneTechnology(queryParameters ...IndexQueryParameters
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("trane-technology"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14922,7 +14922,7 @@ func (c *Client) GetIndexTraneTechnology(queryParameters ...IndexQueryParameters
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14951,7 +14951,7 @@ func (c *Client) GetIndexTrendmicro(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("trendmicro"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -14962,7 +14962,7 @@ func (c *Client) GetIndexTrendmicro(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -14991,7 +14991,7 @@ func (c *Client) GetIndexTrustwave(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("trustwave"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15002,7 +15002,7 @@ func (c *Client) GetIndexTrustwave(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15031,7 +15031,7 @@ func (c *Client) GetIndexTwcert(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("twcert"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15042,7 +15042,7 @@ func (c *Client) GetIndexTwcert(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15071,7 +15071,7 @@ func (c *Client) GetIndexUbiquiti(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ubiquiti"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15082,7 +15082,7 @@ func (c *Client) GetIndexUbiquiti(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15111,7 +15111,7 @@ func (c *Client) GetIndexUbuntu(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("ubuntu"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15122,7 +15122,7 @@ func (c *Client) GetIndexUbuntu(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15151,7 +15151,7 @@ func (c *Client) GetIndexUnify(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("unify"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15162,7 +15162,7 @@ func (c *Client) GetIndexUnify(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15191,7 +15191,7 @@ func (c *Client) GetIndexUnisoc(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("unisoc"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15202,7 +15202,7 @@ func (c *Client) GetIndexUnisoc(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15231,7 +15231,7 @@ func (c *Client) GetIndexUsd(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("usd"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15242,7 +15242,7 @@ func (c *Client) GetIndexUsd(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15271,7 +15271,7 @@ func (c *Client) GetIndexUsom(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("usom"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15282,7 +15282,7 @@ func (c *Client) GetIndexUsom(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15311,7 +15311,7 @@ func (c *Client) GetIndexVandyke(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("vandyke"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15322,7 +15322,7 @@ func (c *Client) GetIndexVandyke(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15351,7 +15351,7 @@ func (c *Client) GetIndexVapidlabs(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("vapidlabs"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15362,7 +15362,7 @@ func (c *Client) GetIndexVapidlabs(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15390,7 +15390,7 @@ func (c *Client) GetIndexVcCpeDictionary(queryParameters ...IndexQueryParameters
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("vc-cpe-dictionary"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15401,7 +15401,7 @@ func (c *Client) GetIndexVcCpeDictionary(queryParameters ...IndexQueryParameters
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15430,7 +15430,7 @@ func (c *Client) GetIndexVde(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("vde"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15441,7 +15441,7 @@ func (c *Client) GetIndexVde(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15470,7 +15470,7 @@ func (c *Client) GetIndexVeeam(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("veeam"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15481,7 +15481,7 @@ func (c *Client) GetIndexVeeam(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15510,7 +15510,7 @@ func (c *Client) GetIndexVeritas(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("veritas"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15521,7 +15521,7 @@ func (c *Client) GetIndexVeritas(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15549,7 +15549,7 @@ func (c *Client) GetIndexVirtuozzo(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("virtuozzo"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15560,7 +15560,7 @@ func (c *Client) GetIndexVirtuozzo(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15588,7 +15588,7 @@ func (c *Client) GetIndexVlc(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("vlc"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15599,7 +15599,7 @@ func (c *Client) GetIndexVlc(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15628,7 +15628,7 @@ func (c *Client) GetIndexVmware(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("vmware"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15639,7 +15639,7 @@ func (c *Client) GetIndexVmware(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15668,7 +15668,7 @@ func (c *Client) GetIndexVoidsec(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("voidsec"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15679,7 +15679,7 @@ func (c *Client) GetIndexVoidsec(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15707,7 +15707,7 @@ func (c *Client) GetIndexVulncheck(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("vulncheck"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15718,7 +15718,7 @@ func (c *Client) GetIndexVulncheck(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15747,7 +15747,7 @@ func (c *Client) GetIndexVulncheckConfig(queryParameters ...IndexQueryParameters
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("vulncheck-config"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15758,7 +15758,7 @@ func (c *Client) GetIndexVulncheckConfig(queryParameters ...IndexQueryParameters
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15787,7 +15787,7 @@ func (c *Client) GetIndexVulncheckCvelistV5(queryParameters ...IndexQueryParamet
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("vulncheck-cvelist-v5"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15798,7 +15798,7 @@ func (c *Client) GetIndexVulncheckCvelistV5(queryParameters ...IndexQueryParamet
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15827,7 +15827,7 @@ func (c *Client) GetIndexVulncheckKev(queryParameters ...IndexQueryParameters) (
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("vulncheck-kev"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15838,7 +15838,7 @@ func (c *Client) GetIndexVulncheckKev(queryParameters ...IndexQueryParameters) (
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15867,7 +15867,7 @@ func (c *Client) GetIndexVulncheckNvd(queryParameters ...IndexQueryParameters) (
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("vulncheck-nvd"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15878,7 +15878,7 @@ func (c *Client) GetIndexVulncheckNvd(queryParameters ...IndexQueryParameters) (
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15907,7 +15907,7 @@ func (c *Client) GetIndexVulncheckNvd2(queryParameters ...IndexQueryParameters) 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("vulncheck-nvd2"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15918,7 +15918,7 @@ func (c *Client) GetIndexVulncheckNvd2(queryParameters ...IndexQueryParameters) 
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15947,7 +15947,7 @@ func (c *Client) GetIndexVulnerabilityAliases(queryParameters ...IndexQueryParam
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("vulnerability-aliases"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15958,7 +15958,7 @@ func (c *Client) GetIndexVulnerabilityAliases(queryParameters ...IndexQueryParam
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -15987,7 +15987,7 @@ func (c *Client) GetIndexVulnrichment(queryParameters ...IndexQueryParameters) (
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("vulnrichment"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -15998,7 +15998,7 @@ func (c *Client) GetIndexVulnrichment(queryParameters ...IndexQueryParameters) (
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16027,7 +16027,7 @@ func (c *Client) GetIndexVyaire(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("vyaire"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16038,7 +16038,7 @@ func (c *Client) GetIndexVyaire(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16067,7 +16067,7 @@ func (c *Client) GetIndexWatchguard(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("watchguard"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16078,7 +16078,7 @@ func (c *Client) GetIndexWatchguard(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16107,7 +16107,7 @@ func (c *Client) GetIndexWhatsapp(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("whatsapp"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16118,7 +16118,7 @@ func (c *Client) GetIndexWhatsapp(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16147,7 +16147,7 @@ func (c *Client) GetIndexWibu(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("wibu"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16158,7 +16158,7 @@ func (c *Client) GetIndexWibu(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16187,7 +16187,7 @@ func (c *Client) GetIndexWireshark(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("wireshark"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16198,7 +16198,7 @@ func (c *Client) GetIndexWireshark(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16227,7 +16227,7 @@ func (c *Client) GetIndexWithSecure(queryParameters ...IndexQueryParameters) (re
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("with-secure"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16238,7 +16238,7 @@ func (c *Client) GetIndexWithSecure(queryParameters ...IndexQueryParameters) (re
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16267,7 +16267,7 @@ func (c *Client) GetIndexWolfi(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("wolfi"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16278,7 +16278,7 @@ func (c *Client) GetIndexWolfi(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16307,7 +16307,7 @@ func (c *Client) GetIndexWolfssl(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("wolfssl"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16318,7 +16318,7 @@ func (c *Client) GetIndexWolfssl(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16347,7 +16347,7 @@ func (c *Client) GetIndexWordfence(queryParameters ...IndexQueryParameters) (res
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("wordfence"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16358,7 +16358,7 @@ func (c *Client) GetIndexWordfence(queryParameters ...IndexQueryParameters) (res
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16387,7 +16387,7 @@ func (c *Client) GetIndexXen(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("xen"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16398,7 +16398,7 @@ func (c *Client) GetIndexXen(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16427,7 +16427,7 @@ func (c *Client) GetIndexXerox(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("xerox"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16438,7 +16438,7 @@ func (c *Client) GetIndexXerox(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16467,7 +16467,7 @@ func (c *Client) GetIndexXiaomi(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("xiaomi"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16478,7 +16478,7 @@ func (c *Client) GetIndexXiaomi(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16507,7 +16507,7 @@ func (c *Client) GetIndexXylem(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("xylem"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16518,7 +16518,7 @@ func (c *Client) GetIndexXylem(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16546,7 +16546,7 @@ func (c *Client) GetIndexYamaha(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("yamaha"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16557,7 +16557,7 @@ func (c *Client) GetIndexYamaha(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16586,7 +16586,7 @@ func (c *Client) GetIndexYokogawa(queryParameters ...IndexQueryParameters) (resp
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("yokogawa"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16597,7 +16597,7 @@ func (c *Client) GetIndexYokogawa(queryParameters ...IndexQueryParameters) (resp
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16626,7 +16626,7 @@ func (c *Client) GetIndexYubico(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("yubico"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16637,7 +16637,7 @@ func (c *Client) GetIndexYubico(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16666,7 +16666,7 @@ func (c *Client) GetIndexZdi(queryParameters ...IndexQueryParameters) (responseJ
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("zdi"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16677,7 +16677,7 @@ func (c *Client) GetIndexZdi(queryParameters ...IndexQueryParameters) (responseJ
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16706,7 +16706,7 @@ func (c *Client) GetIndexZebra(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("zebra"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16717,7 +16717,7 @@ func (c *Client) GetIndexZebra(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16746,7 +16746,7 @@ func (c *Client) GetIndexZeroscience(queryParameters ...IndexQueryParameters) (r
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("zeroscience"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16757,7 +16757,7 @@ func (c *Client) GetIndexZeroscience(queryParameters ...IndexQueryParameters) (r
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16786,7 +16786,7 @@ func (c *Client) GetIndexZimbra(queryParameters ...IndexQueryParameters) (respon
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("zimbra"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16797,7 +16797,7 @@ func (c *Client) GetIndexZimbra(queryParameters ...IndexQueryParameters) (respon
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16826,7 +16826,7 @@ func (c *Client) GetIndexZoom(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("zoom"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16837,7 +16837,7 @@ func (c *Client) GetIndexZoom(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16866,7 +16866,7 @@ func (c *Client) GetIndexZscaler(queryParameters ...IndexQueryParameters) (respo
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("zscaler"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16877,7 +16877,7 @@ func (c *Client) GetIndexZscaler(queryParameters ...IndexQueryParameters) (respo
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16906,7 +16906,7 @@ func (c *Client) GetIndexZuso(queryParameters ...IndexQueryParameters) (response
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("zuso"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16917,7 +16917,7 @@ func (c *Client) GetIndexZuso(queryParameters ...IndexQueryParameters) (response
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
@@ -16946,7 +16946,7 @@ func (c *Client) GetIndexZyxel(queryParameters ...IndexQueryParameters) (respons
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("zyxel"), nil)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -16957,7 +16957,7 @@ func (c *Client) GetIndexZyxel(queryParameters ...IndexQueryParameters) (respons
 
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 

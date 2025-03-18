@@ -15,14 +15,14 @@ func (c *Client) GetRule(rule string) (string, error) {
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/rules/"+index+"/"+url.QueryEscape(rule), nil)
 	if err != nil {
-		panic(err)
+		return "", err
 	}
 
 	c.SetAuthHeader(req)
 
 	res, err := client.Do(req)
 	if err != nil {
-		panic(err)
+		return "", err
 	}
 
 	defer res.Body.Close()
