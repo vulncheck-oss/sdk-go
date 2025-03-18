@@ -32,7 +32,7 @@ func (c *Client) GetCursorIndex(index string, cursor string, queryParameters ...
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape(index)+"/cursor", nil)
 
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	c.SetAuthHeader(req)
@@ -47,7 +47,7 @@ func (c *Client) GetCursorIndex(index string, cursor string, queryParameters ...
 
 	resp, err := client.Do(req)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
