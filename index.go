@@ -186,10 +186,7 @@ func (c *Client) GetIndex(index string, queryParameters ...IndexQueryParameters)
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)

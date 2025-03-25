@@ -1,7 +1,6 @@
 package sdk
 
 import (
-	"encoding/json"
 	"fmt"
 	"net/http"
 	"net/url"
@@ -21,6 +20,11 @@ type Client struct {
 type MetaError struct {
 	Error  bool     `json:"error"`
 	Errors []string `json:"errors"`
+}
+
+type ReqError struct {
+	StatusCode int
+	Reason     MetaError
 }
 
 var ErrorUnauthorized = fmt.Errorf("unauthorized")
@@ -96,9 +100,7 @@ func (c *Client) Request(method string, url string) (*http.Response, error) {
 	}
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	return resp, nil
@@ -118,4 +120,8 @@ func (c *Client) Form(key string, value string) *Client {
 	}
 	c.FormValues.Add(key, value)
 	return c
+}
+
+func (e ReqError) Error() string {
+	return fmt.Sprintf("error: %t, status code: %d, errors: %v", e.Reason.Error, e.StatusCode, e.Reason.Errors)
 }

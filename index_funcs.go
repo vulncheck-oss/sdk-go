@@ -2,7 +2,7 @@ package sdk
 
 import (
 	"encoding/json"
-	"fmt"
+
 	"github.com/vulncheck-oss/sdk-go/pkg/client"
 	"net/http"
 	"net/url"
@@ -38,10 +38,7 @@ func (c *Client) GetIndex7zip(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -78,10 +75,7 @@ func (c *Client) GetIndexA10(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -118,10 +112,7 @@ func (c *Client) GetIndexAbb(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -158,10 +149,7 @@ func (c *Client) GetIndexAbbott(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -198,10 +186,7 @@ func (c *Client) GetIndexAbsolute(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -238,10 +223,7 @@ func (c *Client) GetIndexAcronis(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -278,10 +260,7 @@ func (c *Client) GetIndexAdobe(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -317,10 +296,7 @@ func (c *Client) GetIndexAix(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -357,10 +333,7 @@ func (c *Client) GetIndexAlephResearch(queryParameters ...IndexQueryParameters) 
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -397,10 +370,7 @@ func (c *Client) GetIndexAlma(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -437,10 +407,7 @@ func (c *Client) GetIndexAlpine(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -477,10 +444,7 @@ func (c *Client) GetIndexAlpinePurls(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -517,10 +481,7 @@ func (c *Client) GetIndexAmazon(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -556,10 +517,7 @@ func (c *Client) GetIndexAmazonCve(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -596,10 +554,7 @@ func (c *Client) GetIndexAmd(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -636,10 +591,7 @@ func (c *Client) GetIndexAmi(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -676,10 +628,7 @@ func (c *Client) GetIndexAnchoreNvdOverride(queryParameters ...IndexQueryParamet
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -716,10 +665,7 @@ func (c *Client) GetIndexAndroid(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -756,10 +702,7 @@ func (c *Client) GetIndexApacheActivemq(queryParameters ...IndexQueryParameters)
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -796,10 +739,7 @@ func (c *Client) GetIndexApacheArchiva(queryParameters ...IndexQueryParameters) 
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -836,10 +776,7 @@ func (c *Client) GetIndexApacheArrow(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -876,10 +813,7 @@ func (c *Client) GetIndexApacheCamel(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -916,10 +850,7 @@ func (c *Client) GetIndexApacheCommons(queryParameters ...IndexQueryParameters) 
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -956,10 +887,7 @@ func (c *Client) GetIndexApacheCouchdb(queryParameters ...IndexQueryParameters) 
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -996,10 +924,7 @@ func (c *Client) GetIndexApacheFlink(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1036,10 +961,7 @@ func (c *Client) GetIndexApacheGuacamole(queryParameters ...IndexQueryParameters
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1076,10 +998,7 @@ func (c *Client) GetIndexApacheHadoop(queryParameters ...IndexQueryParameters) (
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1116,10 +1035,7 @@ func (c *Client) GetIndexApacheHttp(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1156,10 +1072,7 @@ func (c *Client) GetIndexApacheJspwiki(queryParameters ...IndexQueryParameters) 
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1196,10 +1109,7 @@ func (c *Client) GetIndexApacheKafka(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1236,10 +1146,7 @@ func (c *Client) GetIndexApacheLoggingservices(queryParameters ...IndexQueryPara
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1276,10 +1183,7 @@ func (c *Client) GetIndexApacheNifi(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1316,10 +1220,7 @@ func (c *Client) GetIndexApacheOfbiz(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1356,10 +1257,7 @@ func (c *Client) GetIndexApacheOpenmeetings(queryParameters ...IndexQueryParamet
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1396,10 +1294,7 @@ func (c *Client) GetIndexApacheOpenoffice(queryParameters ...IndexQueryParameter
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1436,10 +1331,7 @@ func (c *Client) GetIndexApachePulsar(queryParameters ...IndexQueryParameters) (
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1476,10 +1368,7 @@ func (c *Client) GetIndexApacheShiro(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1516,10 +1405,7 @@ func (c *Client) GetIndexApacheSpark(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1556,10 +1442,7 @@ func (c *Client) GetIndexApacheStruts(queryParameters ...IndexQueryParameters) (
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1596,10 +1479,7 @@ func (c *Client) GetIndexApacheSubversion(queryParameters ...IndexQueryParameter
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1636,10 +1516,7 @@ func (c *Client) GetIndexApacheSuperset(queryParameters ...IndexQueryParameters)
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1676,10 +1553,7 @@ func (c *Client) GetIndexApacheTomcat(queryParameters ...IndexQueryParameters) (
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1716,10 +1590,7 @@ func (c *Client) GetIndexApacheZookeeper(queryParameters ...IndexQueryParameters
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1756,10 +1627,7 @@ func (c *Client) GetIndexAppcheck(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1796,10 +1664,7 @@ func (c *Client) GetIndexAppgate(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1836,10 +1701,7 @@ func (c *Client) GetIndexApple(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1876,10 +1738,7 @@ func (c *Client) GetIndexArch(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1916,10 +1775,7 @@ func (c *Client) GetIndexArista(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1956,10 +1812,7 @@ func (c *Client) GetIndexAruba(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -1996,10 +1849,7 @@ func (c *Client) GetIndexAsrg(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2036,10 +1886,7 @@ func (c *Client) GetIndexAssetnote(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2076,10 +1923,7 @@ func (c *Client) GetIndexAsterisk(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2115,10 +1959,7 @@ func (c *Client) GetIndexAstra(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2155,10 +1996,7 @@ func (c *Client) GetIndexAsus(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2195,10 +2033,7 @@ func (c *Client) GetIndexAtlassian(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2235,10 +2070,7 @@ func (c *Client) GetIndexAtlassianVulns(queryParameters ...IndexQueryParameters)
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2275,10 +2107,7 @@ func (c *Client) GetIndexAtredis(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2315,10 +2144,7 @@ func (c *Client) GetIndexAuscert(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2355,10 +2181,7 @@ func (c *Client) GetIndexAutodesk(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2395,10 +2218,7 @@ func (c *Client) GetIndexAvaya(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2435,10 +2255,7 @@ func (c *Client) GetIndexAveva(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2475,10 +2292,7 @@ func (c *Client) GetIndexAvigilon(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2515,10 +2329,7 @@ func (c *Client) GetIndexAws(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2555,10 +2366,7 @@ func (c *Client) GetIndexAxis(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2595,10 +2403,7 @@ func (c *Client) GetIndexAzul(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2635,10 +2440,7 @@ func (c *Client) GetIndexBandr(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2675,10 +2477,7 @@ func (c *Client) GetIndexBaxter(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2715,10 +2514,7 @@ func (c *Client) GetIndexBbraun(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2755,10 +2551,7 @@ func (c *Client) GetIndexBd(queryParameters ...IndexQueryParameters) (responseJS
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2795,10 +2588,7 @@ func (c *Client) GetIndexBdu(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2835,10 +2625,7 @@ func (c *Client) GetIndexBeckhoff(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2875,10 +2662,7 @@ func (c *Client) GetIndexBelden(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2915,10 +2699,7 @@ func (c *Client) GetIndexBeyondTrust(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2955,10 +2736,7 @@ func (c *Client) GetIndexBinarly(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -2995,10 +2773,7 @@ func (c *Client) GetIndexBitdefender(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3035,10 +2810,7 @@ func (c *Client) GetIndexBlackberry(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3075,10 +2847,7 @@ func (c *Client) GetIndexBls(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3115,10 +2884,7 @@ func (c *Client) GetIndexBosch(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3155,10 +2921,7 @@ func (c *Client) GetIndexBostonScientific(queryParameters ...IndexQueryParameter
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3195,10 +2958,7 @@ func (c *Client) GetIndexBotnets(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3235,10 +2995,7 @@ func (c *Client) GetIndexCaCyberCentre(queryParameters ...IndexQueryParameters) 
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3275,10 +3032,7 @@ func (c *Client) GetIndexCanvas(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3315,10 +3069,7 @@ func (c *Client) GetIndexCarestream(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3355,10 +3106,7 @@ func (c *Client) GetIndexCargo(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3395,10 +3143,7 @@ func (c *Client) GetIndexCarrier(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3435,10 +3180,7 @@ func (c *Client) GetIndexCblMariner(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3475,10 +3217,7 @@ func (c *Client) GetIndexCentos(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3515,10 +3254,7 @@ func (c *Client) GetIndexCertBe(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3555,10 +3291,7 @@ func (c *Client) GetIndexCertIn(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3595,10 +3328,7 @@ func (c *Client) GetIndexCertIrSecurityAlerts(queryParameters ...IndexQueryParam
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3635,10 +3365,7 @@ func (c *Client) GetIndexCertSe(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3675,10 +3402,7 @@ func (c *Client) GetIndexCertUa(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3715,10 +3439,7 @@ func (c *Client) GetIndexCerteu(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3755,10 +3476,7 @@ func (c *Client) GetIndexCertfr(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3795,10 +3513,7 @@ func (c *Client) GetIndexChainguard(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3835,10 +3550,7 @@ func (c *Client) GetIndexCheckpoint(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3875,10 +3587,7 @@ func (c *Client) GetIndexChrome(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3915,10 +3624,7 @@ func (c *Client) GetIndexCisaAlerts(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3955,10 +3661,7 @@ func (c *Client) GetIndexCisaKev(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -3995,10 +3698,7 @@ func (c *Client) GetIndexCisco(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4034,10 +3734,7 @@ func (c *Client) GetIndexCiscoCsaf(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4074,10 +3771,7 @@ func (c *Client) GetIndexCiscoTalos(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4114,10 +3808,7 @@ func (c *Client) GetIndexCitrix(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4154,10 +3845,7 @@ func (c *Client) GetIndexClaroty(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4194,10 +3882,7 @@ func (c *Client) GetIndexCloudbees(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4234,10 +3919,7 @@ func (c *Client) GetIndexCloudvulndb(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4274,10 +3956,7 @@ func (c *Client) GetIndexCnnvd(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4314,10 +3993,7 @@ func (c *Client) GetIndexCnvdBulletins(queryParameters ...IndexQueryParameters) 
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4354,10 +4030,7 @@ func (c *Client) GetIndexCnvdFlaws(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4394,10 +4067,7 @@ func (c *Client) GetIndexCocoapods(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4434,10 +4104,7 @@ func (c *Client) GetIndexCodesys(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4474,10 +4141,7 @@ func (c *Client) GetIndexCompassSecurity(queryParameters ...IndexQueryParameters
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4514,10 +4178,7 @@ func (c *Client) GetIndexComposer(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4554,10 +4215,7 @@ func (c *Client) GetIndexConan(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4593,10 +4251,7 @@ func (c *Client) GetIndexCoreimpact(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4633,10 +4288,7 @@ func (c *Client) GetIndexCrestron(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4673,10 +4325,7 @@ func (c *Client) GetIndexCurl(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4713,10 +4362,7 @@ func (c *Client) GetIndexCwe(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4753,10 +4399,7 @@ func (c *Client) GetIndexDahua(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4793,10 +4436,7 @@ func (c *Client) GetIndexDassault(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4833,10 +4473,7 @@ func (c *Client) GetIndexDebian(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4873,10 +4510,7 @@ func (c *Client) GetIndexDebianDsa(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4913,10 +4547,7 @@ func (c *Client) GetIndexDell(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4953,10 +4584,7 @@ func (c *Client) GetIndexDelta(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -4993,10 +4621,7 @@ func (c *Client) GetIndexDjango(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5033,10 +4658,7 @@ func (c *Client) GetIndexDnn(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5073,10 +4695,7 @@ func (c *Client) GetIndexDotcms(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5113,10 +4732,7 @@ func (c *Client) GetIndexDragos(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5153,10 +4769,7 @@ func (c *Client) GetIndexDraytek(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5192,10 +4805,7 @@ func (c *Client) GetIndexDrupal(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5232,10 +4842,7 @@ func (c *Client) GetIndexEaton(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5272,10 +4879,7 @@ func (c *Client) GetIndexElastic(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5312,10 +4916,7 @@ func (c *Client) GetIndexElspec(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5352,10 +4953,7 @@ func (c *Client) GetIndexEmergingThreatsSnort(queryParameters ...IndexQueryParam
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5392,10 +4990,7 @@ func (c *Client) GetIndexEmerson(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5431,10 +5026,7 @@ func (c *Client) GetIndexEndoflife(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5471,10 +5063,7 @@ func (c *Client) GetIndexEol(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5510,10 +5099,7 @@ func (c *Client) GetIndexEolMicrosoft(queryParameters ...IndexQueryParameters) (
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5550,10 +5136,7 @@ func (c *Client) GetIndexEpss(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5590,10 +5173,7 @@ func (c *Client) GetIndexExodusIntel(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5630,10 +5210,7 @@ func (c *Client) GetIndexExploitChains(queryParameters ...IndexQueryParameters) 
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5670,10 +5247,7 @@ func (c *Client) GetIndexExploitdb(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5710,10 +5284,7 @@ func (c *Client) GetIndexExploits(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5749,10 +5320,7 @@ func (c *Client) GetIndexExploitsChangelog(queryParameters ...IndexQueryParamete
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5789,10 +5357,7 @@ func (c *Client) GetIndexFSecure(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5828,10 +5393,7 @@ func (c *Client) GetIndexF5(queryParameters ...IndexQueryParameters) (responseJS
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5868,10 +5430,7 @@ func (c *Client) GetIndexFanuc(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5908,10 +5467,7 @@ func (c *Client) GetIndexFastly(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5948,10 +5504,7 @@ func (c *Client) GetIndexFedora(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -5988,10 +5541,7 @@ func (c *Client) GetIndexFilecloud(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6027,10 +5577,7 @@ func (c *Client) GetIndexFilezilla(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6067,10 +5614,7 @@ func (c *Client) GetIndexFlattSecurity(queryParameters ...IndexQueryParameters) 
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6107,10 +5651,7 @@ func (c *Client) GetIndexForgerock(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6147,10 +5688,7 @@ func (c *Client) GetIndexFortinet(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6186,10 +5724,7 @@ func (c *Client) GetIndexFortinetIps(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6226,10 +5761,7 @@ func (c *Client) GetIndexFoxit(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6266,10 +5798,7 @@ func (c *Client) GetIndexFreebsd(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6306,10 +5835,7 @@ func (c *Client) GetIndexGallagher(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6346,10 +5872,7 @@ func (c *Client) GetIndexGcp(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6386,10 +5909,7 @@ func (c *Client) GetIndexGeGas(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6426,10 +5946,7 @@ func (c *Client) GetIndexGeHealthcare(queryParameters ...IndexQueryParameters) (
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6466,10 +5983,7 @@ func (c *Client) GetIndexGem(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6506,10 +6020,7 @@ func (c *Client) GetIndexGenetec(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6546,10 +6057,7 @@ func (c *Client) GetIndexGigabyte(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6586,10 +6094,7 @@ func (c *Client) GetIndexGiteeExploits(queryParameters ...IndexQueryParameters) 
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6626,10 +6131,7 @@ func (c *Client) GetIndexGithubExploits(queryParameters ...IndexQueryParameters)
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6666,10 +6168,7 @@ func (c *Client) GetIndexGithubSecurityAdvisories(queryParameters ...IndexQueryP
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6706,10 +6205,7 @@ func (c *Client) GetIndexGitlabAdvisoriesCommunity(queryParameters ...IndexQuery
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6746,10 +6242,7 @@ func (c *Client) GetIndexGitlabExploits(queryParameters ...IndexQueryParameters)
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6786,10 +6279,7 @@ func (c *Client) GetIndexGnutls(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6826,10 +6316,7 @@ func (c *Client) GetIndexGolang(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6866,10 +6353,7 @@ func (c *Client) GetIndexGoogle0dayItw(queryParameters ...IndexQueryParameters) 
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6906,10 +6390,7 @@ func (c *Client) GetIndexGoogleContainerOptimizedOs(queryParameters ...IndexQuer
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6946,10 +6427,7 @@ func (c *Client) GetIndexGrafana(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -6986,10 +6464,7 @@ func (c *Client) GetIndexGreynoiseMetadata(queryParameters ...IndexQueryParamete
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7026,10 +6501,7 @@ func (c *Client) GetIndexHackage(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7066,10 +6538,7 @@ func (c *Client) GetIndexHarmonyos(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7106,10 +6575,7 @@ func (c *Client) GetIndexHashicorp(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7146,10 +6612,7 @@ func (c *Client) GetIndexHaskellSadb(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7186,10 +6649,7 @@ func (c *Client) GetIndexHcl(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7226,10 +6686,7 @@ func (c *Client) GetIndexHex(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7266,10 +6723,7 @@ func (c *Client) GetIndexHikvision(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7306,10 +6760,7 @@ func (c *Client) GetIndexHillrom(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7346,10 +6797,7 @@ func (c *Client) GetIndexHitachi(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7386,10 +6834,7 @@ func (c *Client) GetIndexHitachiEnergy(queryParameters ...IndexQueryParameters) 
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7426,10 +6871,7 @@ func (c *Client) GetIndexHkcert(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7466,10 +6908,7 @@ func (c *Client) GetIndexHoneywell(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7506,10 +6945,7 @@ func (c *Client) GetIndexHp(queryParameters ...IndexQueryParameters) (responseJS
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7545,10 +6981,7 @@ func (c *Client) GetIndexHpe(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7585,10 +7018,7 @@ func (c *Client) GetIndexHuaweiEuleros(queryParameters ...IndexQueryParameters) 
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7625,10 +7055,7 @@ func (c *Client) GetIndexHuaweiIps(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7665,10 +7092,7 @@ func (c *Client) GetIndexHuaweiPsirt(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7705,10 +7129,7 @@ func (c *Client) GetIndexIava(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7745,10 +7166,7 @@ func (c *Client) GetIndexIbm(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7785,10 +7203,7 @@ func (c *Client) GetIndexIdemia(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7825,10 +7240,7 @@ func (c *Client) GetIndexIlAlerts(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7865,10 +7277,7 @@ func (c *Client) GetIndexIlVulnerabilities(queryParameters ...IndexQueryParamete
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7905,10 +7314,7 @@ func (c *Client) GetIndexIncibe(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7945,10 +7351,7 @@ func (c *Client) GetIndexInitialAccess(queryParameters ...IndexQueryParameters) 
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -7985,10 +7388,7 @@ func (c *Client) GetIndexInitialAccessGit(queryParameters ...IndexQueryParameter
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8025,10 +7425,7 @@ func (c *Client) GetIndexIntel(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8065,10 +7462,7 @@ func (c *Client) GetIndexIpintel10d(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8105,10 +7499,7 @@ func (c *Client) GetIndexIpintel30d(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8145,10 +7536,7 @@ func (c *Client) GetIndexIpintel3d(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8185,10 +7573,7 @@ func (c *Client) GetIndexIpintel90d(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8225,10 +7610,7 @@ func (c *Client) GetIndexIstio(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8265,10 +7647,7 @@ func (c *Client) GetIndexIvanti(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8305,10 +7684,7 @@ func (c *Client) GetIndexIvantiRss(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8345,10 +7721,7 @@ func (c *Client) GetIndexJenkins(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8385,10 +7758,7 @@ func (c *Client) GetIndexJetbrains(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8425,10 +7795,7 @@ func (c *Client) GetIndexJfrog(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8465,10 +7832,7 @@ func (c *Client) GetIndexJnj(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8504,10 +7868,7 @@ func (c *Client) GetIndexJvn(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8544,10 +7905,7 @@ func (c *Client) GetIndexJvndb(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8584,10 +7942,7 @@ func (c *Client) GetIndexKasperskyIcsCert(queryParameters ...IndexQueryParameter
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8624,10 +7979,7 @@ func (c *Client) GetIndexKorelogic(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8664,10 +8016,7 @@ func (c *Client) GetIndexKrcertSecurityNotices(queryParameters ...IndexQueryPara
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8704,10 +8053,7 @@ func (c *Client) GetIndexKrcertVulnerabilities(queryParameters ...IndexQueryPara
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8744,10 +8090,7 @@ func (c *Client) GetIndexKubernetes(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8784,10 +8127,7 @@ func (c *Client) GetIndexLenovo(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8824,10 +8164,7 @@ func (c *Client) GetIndexLexmark(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8864,10 +8201,7 @@ func (c *Client) GetIndexLg(queryParameters ...IndexQueryParameters) (responseJS
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8904,10 +8238,7 @@ func (c *Client) GetIndexLibreOffice(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8944,10 +8275,7 @@ func (c *Client) GetIndexLinux(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -8984,10 +8312,7 @@ func (c *Client) GetIndexMFiles(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9024,10 +8349,7 @@ func (c *Client) GetIndexMacert(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9064,10 +8386,7 @@ func (c *Client) GetIndexManageengine(queryParameters ...IndexQueryParameters) (
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9104,10 +8423,7 @@ func (c *Client) GetIndexMaven(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9144,10 +8460,7 @@ func (c *Client) GetIndexMbedTls(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9183,10 +8496,7 @@ func (c *Client) GetIndexMcafee(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9223,10 +8533,7 @@ func (c *Client) GetIndexMediatek(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9263,10 +8570,7 @@ func (c *Client) GetIndexMedtronic(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9303,10 +8607,7 @@ func (c *Client) GetIndexMendix(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9343,10 +8644,7 @@ func (c *Client) GetIndexMetasploit(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9383,10 +8681,7 @@ func (c *Client) GetIndexMicrosoftCvrf(queryParameters ...IndexQueryParameters) 
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9423,10 +8718,7 @@ func (c *Client) GetIndexMicrosoftKb(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9463,10 +8755,7 @@ func (c *Client) GetIndexMikrotik(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9503,10 +8792,7 @@ func (c *Client) GetIndexMindray(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9543,10 +8829,7 @@ func (c *Client) GetIndexMispThreatActors(queryParameters ...IndexQueryParameter
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9583,10 +8866,7 @@ func (c *Client) GetIndexMitel(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9623,10 +8903,7 @@ func (c *Client) GetIndexMitreAttackCve(queryParameters ...IndexQueryParameters)
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9663,10 +8940,7 @@ func (c *Client) GetIndexMitreCvelistV5(queryParameters ...IndexQueryParameters)
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9703,10 +8977,7 @@ func (c *Client) GetIndexMitsubishiElectric(queryParameters ...IndexQueryParamet
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9743,10 +9014,7 @@ func (c *Client) GetIndexMongodb(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9783,10 +9051,7 @@ func (c *Client) GetIndexMoxa(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9823,10 +9088,7 @@ func (c *Client) GetIndexMozilla(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9863,10 +9125,7 @@ func (c *Client) GetIndexNaver(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9902,10 +9161,7 @@ func (c *Client) GetIndexNcsc(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9941,10 +9197,7 @@ func (c *Client) GetIndexNcscCves(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -9981,10 +9234,7 @@ func (c *Client) GetIndexNec(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10021,10 +9271,7 @@ func (c *Client) GetIndexNetapp(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10060,10 +9307,7 @@ func (c *Client) GetIndexNetatalk(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10100,10 +9344,7 @@ func (c *Client) GetIndexNetgate(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10140,10 +9381,7 @@ func (c *Client) GetIndexNetgear(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10180,10 +9418,7 @@ func (c *Client) GetIndexNetskope(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10220,10 +9455,7 @@ func (c *Client) GetIndexNginx(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10260,10 +9492,7 @@ func (c *Client) GetIndexNhs(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10300,10 +9529,7 @@ func (c *Client) GetIndexNi(queryParameters ...IndexQueryParameters) (responseJS
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10340,10 +9566,7 @@ func (c *Client) GetIndexNistNvd(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10380,10 +9603,7 @@ func (c *Client) GetIndexNistNvd2(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10420,10 +9640,7 @@ func (c *Client) GetIndexNistNvd2Cpematch(queryParameters ...IndexQueryParameter
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10459,10 +9676,7 @@ func (c *Client) GetIndexNistNvd2Sources(queryParameters ...IndexQueryParameters
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10499,10 +9713,7 @@ func (c *Client) GetIndexNodeSecurity(queryParameters ...IndexQueryParameters) (
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10539,10 +9750,7 @@ func (c *Client) GetIndexNodejs(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10579,10 +9787,7 @@ func (c *Client) GetIndexNokia(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10618,10 +9823,7 @@ func (c *Client) GetIndexNotepadplusplus(queryParameters ...IndexQueryParameters
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10658,10 +9860,7 @@ func (c *Client) GetIndexNozomi(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10698,10 +9897,7 @@ func (c *Client) GetIndexNpm(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10738,10 +9934,7 @@ func (c *Client) GetIndexNtp(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10778,10 +9971,7 @@ func (c *Client) GetIndexNuget(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10818,10 +10008,7 @@ func (c *Client) GetIndexNvidia(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10858,10 +10045,7 @@ func (c *Client) GetIndexNzAdvisories(queryParameters ...IndexQueryParameters) (
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10898,10 +10082,7 @@ func (c *Client) GetIndexOctopusDeploy(queryParameters ...IndexQueryParameters) 
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10938,10 +10119,7 @@ func (c *Client) GetIndexOkta(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -10978,10 +10156,7 @@ func (c *Client) GetIndexOmron(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11018,10 +10193,7 @@ func (c *Client) GetIndexOneE(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11058,10 +10230,7 @@ func (c *Client) GetIndexOpam(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11098,10 +10267,7 @@ func (c *Client) GetIndexOpenCvdb(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11138,10 +10304,7 @@ func (c *Client) GetIndexOpenbsd(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11178,10 +10341,7 @@ func (c *Client) GetIndexOpenjdk(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11218,10 +10378,7 @@ func (c *Client) GetIndexOpenssh(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11258,10 +10415,7 @@ func (c *Client) GetIndexOpensslSecadv(queryParameters ...IndexQueryParameters) 
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11298,10 +10452,7 @@ func (c *Client) GetIndexOpenstack(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11338,10 +10489,7 @@ func (c *Client) GetIndexOpenwrt(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11378,10 +10526,7 @@ func (c *Client) GetIndexOracle(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11418,10 +10563,7 @@ func (c *Client) GetIndexOracleCpu(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11458,10 +10600,7 @@ func (c *Client) GetIndexOracleCpuCsaf(queryParameters ...IndexQueryParameters) 
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11498,10 +10637,7 @@ func (c *Client) GetIndexOsv(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11538,10 +10674,7 @@ func (c *Client) GetIndexOtrs(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11578,10 +10711,7 @@ func (c *Client) GetIndexOwncloud(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11617,10 +10747,7 @@ func (c *Client) GetIndexPacketstorm(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11657,10 +10784,7 @@ func (c *Client) GetIndexPalantir(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11697,10 +10821,7 @@ func (c *Client) GetIndexPaloAlto(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11737,10 +10858,7 @@ func (c *Client) GetIndexPanasonic(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11777,10 +10895,7 @@ func (c *Client) GetIndexPapercut(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11817,10 +10932,7 @@ func (c *Client) GetIndexPega(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11857,10 +10969,7 @@ func (c *Client) GetIndexPhilips(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11897,10 +11006,7 @@ func (c *Client) GetIndexPhoenixContact(queryParameters ...IndexQueryParameters)
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11937,10 +11043,7 @@ func (c *Client) GetIndexPhpMyAdmin(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -11977,10 +11080,7 @@ func (c *Client) GetIndexPostgressql(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12017,10 +11117,7 @@ func (c *Client) GetIndexPowerdns(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12057,10 +11154,7 @@ func (c *Client) GetIndexProgress(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12097,10 +11191,7 @@ func (c *Client) GetIndexProofpoint(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12136,10 +11227,7 @@ func (c *Client) GetIndexPtc(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12176,10 +11264,7 @@ func (c *Client) GetIndexPub(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12216,10 +11301,7 @@ func (c *Client) GetIndexPureStorage(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12256,10 +11338,7 @@ func (c *Client) GetIndexPypaAdvisories(queryParameters ...IndexQueryParameters)
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12296,10 +11375,7 @@ func (c *Client) GetIndexPypi(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12336,10 +11412,7 @@ func (c *Client) GetIndexQnap(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12376,10 +11449,7 @@ func (c *Client) GetIndexQualcomm(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12416,10 +11486,7 @@ func (c *Client) GetIndexQualys(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12455,10 +11522,7 @@ func (c *Client) GetIndexQubesQsb(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12495,10 +11559,7 @@ func (c *Client) GetIndexRansomware(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12535,10 +11596,7 @@ func (c *Client) GetIndexRedhat(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12575,10 +11633,7 @@ func (c *Client) GetIndexRenesas(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12615,10 +11670,7 @@ func (c *Client) GetIndexRevive(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12655,10 +11707,7 @@ func (c *Client) GetIndexRoche(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12695,10 +11744,7 @@ func (c *Client) GetIndexRockwell(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12735,10 +11781,7 @@ func (c *Client) GetIndexRocky(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12775,10 +11818,7 @@ func (c *Client) GetIndexRockyErrata(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12815,10 +11855,7 @@ func (c *Client) GetIndexRockyPurls(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12854,10 +11891,7 @@ func (c *Client) GetIndexRsync(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12894,10 +11928,7 @@ func (c *Client) GetIndexRuckus(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12934,10 +11965,7 @@ func (c *Client) GetIndexRustsecAdvisories(queryParameters ...IndexQueryParamete
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -12974,10 +12002,7 @@ func (c *Client) GetIndexSacert(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13014,10 +12039,7 @@ func (c *Client) GetIndexSaint(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13054,10 +12076,7 @@ func (c *Client) GetIndexSalesforce(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13094,10 +12113,7 @@ func (c *Client) GetIndexSamba(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13134,10 +12150,7 @@ func (c *Client) GetIndexSap(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13174,10 +12187,7 @@ func (c *Client) GetIndexSchneiderElectric(queryParameters ...IndexQueryParamete
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13214,10 +12224,7 @@ func (c *Client) GetIndexSecConsult(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13253,10 +12260,7 @@ func (c *Client) GetIndexSecuritylab(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13292,10 +12296,7 @@ func (c *Client) GetIndexSeebug(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13332,10 +12333,7 @@ func (c *Client) GetIndexSel(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13372,10 +12370,7 @@ func (c *Client) GetIndexSentinelone(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13412,10 +12407,7 @@ func (c *Client) GetIndexServicenow(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13452,10 +12444,7 @@ func (c *Client) GetIndexShadowserverExploited(queryParameters ...IndexQueryPara
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13491,10 +12480,7 @@ func (c *Client) GetIndexShielder(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13531,10 +12517,7 @@ func (c *Client) GetIndexSick(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13571,10 +12554,7 @@ func (c *Client) GetIndexSiemens(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13611,10 +12591,7 @@ func (c *Client) GetIndexSierraWireless(queryParameters ...IndexQueryParameters)
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13651,10 +12628,7 @@ func (c *Client) GetIndexSigmahqSigmaRules(queryParameters ...IndexQueryParamete
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13691,10 +12665,7 @@ func (c *Client) GetIndexSingcert(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13731,10 +12702,7 @@ func (c *Client) GetIndexSlackware(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13771,10 +12739,7 @@ func (c *Client) GetIndexSolarwinds(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13811,10 +12776,7 @@ func (c *Client) GetIndexSolr(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13850,10 +12812,7 @@ func (c *Client) GetIndexSonatype(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13890,10 +12849,7 @@ func (c *Client) GetIndexSonicwall(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13930,10 +12886,7 @@ func (c *Client) GetIndexSpacelabsHealthcare(queryParameters ...IndexQueryParame
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -13970,10 +12923,7 @@ func (c *Client) GetIndexSplunk(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14010,10 +12960,7 @@ func (c *Client) GetIndexSpring(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14050,10 +12997,7 @@ func (c *Client) GetIndexSsd(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14090,10 +13034,7 @@ func (c *Client) GetIndexStormshield(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14130,10 +13071,7 @@ func (c *Client) GetIndexStryker(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14170,10 +13108,7 @@ func (c *Client) GetIndexSudo(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14210,10 +13145,7 @@ func (c *Client) GetIndexSuse(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14249,10 +13181,7 @@ func (c *Client) GetIndexSuseSecurity(queryParameters ...IndexQueryParameters) (
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14289,10 +13218,7 @@ func (c *Client) GetIndexSwift(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14329,10 +13255,7 @@ func (c *Client) GetIndexSwisslogHealthcare(queryParameters ...IndexQueryParamet
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14369,10 +13292,7 @@ func (c *Client) GetIndexSymfony(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14409,10 +13329,7 @@ func (c *Client) GetIndexSynacktiv(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14449,10 +13366,7 @@ func (c *Client) GetIndexSyncrosoft(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14489,10 +13403,7 @@ func (c *Client) GetIndexSynology(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14528,10 +13439,7 @@ func (c *Client) GetIndexTailscale(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14568,10 +13476,7 @@ func (c *Client) GetIndexTeamviewer(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14607,10 +13512,7 @@ func (c *Client) GetIndexTenableResearchAdvisories(queryParameters ...IndexQuery
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14647,10 +13549,7 @@ func (c *Client) GetIndexTencent(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14687,10 +13586,7 @@ func (c *Client) GetIndexThales(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14727,10 +13623,7 @@ func (c *Client) GetIndexThemissinglink(queryParameters ...IndexQueryParameters)
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14767,10 +13660,7 @@ func (c *Client) GetIndexThreatActors(queryParameters ...IndexQueryParameters) (
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14807,10 +13697,7 @@ func (c *Client) GetIndexTi(queryParameters ...IndexQueryParameters) (responseJS
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14847,10 +13734,7 @@ func (c *Client) GetIndexTibco(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14887,10 +13771,7 @@ func (c *Client) GetIndexTpLink(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14927,10 +13808,7 @@ func (c *Client) GetIndexTraneTechnology(queryParameters ...IndexQueryParameters
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -14967,10 +13845,7 @@ func (c *Client) GetIndexTrendmicro(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15007,10 +13882,7 @@ func (c *Client) GetIndexTrustwave(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15047,10 +13919,7 @@ func (c *Client) GetIndexTwcert(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15087,10 +13956,7 @@ func (c *Client) GetIndexUbiquiti(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15127,10 +13993,7 @@ func (c *Client) GetIndexUbuntu(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15167,10 +14030,7 @@ func (c *Client) GetIndexUnify(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15207,10 +14067,7 @@ func (c *Client) GetIndexUnisoc(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15247,10 +14104,7 @@ func (c *Client) GetIndexUsd(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15287,10 +14141,7 @@ func (c *Client) GetIndexUsom(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15327,10 +14178,7 @@ func (c *Client) GetIndexVandyke(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15367,10 +14215,7 @@ func (c *Client) GetIndexVapidlabs(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15406,10 +14251,7 @@ func (c *Client) GetIndexVcCpeDictionary(queryParameters ...IndexQueryParameters
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15446,10 +14288,7 @@ func (c *Client) GetIndexVde(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15486,10 +14325,7 @@ func (c *Client) GetIndexVeeam(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15526,10 +14362,7 @@ func (c *Client) GetIndexVeritas(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15565,10 +14398,7 @@ func (c *Client) GetIndexVirtuozzo(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15604,10 +14434,7 @@ func (c *Client) GetIndexVlc(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15644,10 +14471,7 @@ func (c *Client) GetIndexVmware(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15684,10 +14508,7 @@ func (c *Client) GetIndexVoidsec(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15723,10 +14544,7 @@ func (c *Client) GetIndexVulncheck(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15763,10 +14581,7 @@ func (c *Client) GetIndexVulncheckConfig(queryParameters ...IndexQueryParameters
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15803,10 +14618,7 @@ func (c *Client) GetIndexVulncheckCvelistV5(queryParameters ...IndexQueryParamet
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15843,10 +14655,7 @@ func (c *Client) GetIndexVulncheckKev(queryParameters ...IndexQueryParameters) (
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15883,10 +14692,7 @@ func (c *Client) GetIndexVulncheckNvd(queryParameters ...IndexQueryParameters) (
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15923,10 +14729,7 @@ func (c *Client) GetIndexVulncheckNvd2(queryParameters ...IndexQueryParameters) 
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -15963,10 +14766,7 @@ func (c *Client) GetIndexVulnerabilityAliases(queryParameters ...IndexQueryParam
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16003,10 +14803,7 @@ func (c *Client) GetIndexVulnrichment(queryParameters ...IndexQueryParameters) (
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16043,10 +14840,7 @@ func (c *Client) GetIndexVyaire(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16083,10 +14877,7 @@ func (c *Client) GetIndexWatchguard(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16123,10 +14914,7 @@ func (c *Client) GetIndexWhatsapp(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16163,10 +14951,7 @@ func (c *Client) GetIndexWibu(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16203,10 +14988,7 @@ func (c *Client) GetIndexWireshark(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16243,10 +15025,7 @@ func (c *Client) GetIndexWithSecure(queryParameters ...IndexQueryParameters) (re
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16283,10 +15062,7 @@ func (c *Client) GetIndexWolfi(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16323,10 +15099,7 @@ func (c *Client) GetIndexWolfssl(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16363,10 +15136,7 @@ func (c *Client) GetIndexWordfence(queryParameters ...IndexQueryParameters) (res
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16403,10 +15173,7 @@ func (c *Client) GetIndexXen(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16443,10 +15210,7 @@ func (c *Client) GetIndexXerox(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16483,10 +15247,7 @@ func (c *Client) GetIndexXiaomi(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16523,10 +15284,7 @@ func (c *Client) GetIndexXylem(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16562,10 +15320,7 @@ func (c *Client) GetIndexYamaha(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16602,10 +15357,7 @@ func (c *Client) GetIndexYokogawa(queryParameters ...IndexQueryParameters) (resp
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16642,10 +15394,7 @@ func (c *Client) GetIndexYubico(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16682,10 +15431,7 @@ func (c *Client) GetIndexZdi(queryParameters ...IndexQueryParameters) (responseJ
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16722,10 +15468,7 @@ func (c *Client) GetIndexZebra(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16762,10 +15505,7 @@ func (c *Client) GetIndexZeroscience(queryParameters ...IndexQueryParameters) (r
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16802,10 +15542,7 @@ func (c *Client) GetIndexZimbra(queryParameters ...IndexQueryParameters) (respon
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16842,10 +15579,7 @@ func (c *Client) GetIndexZoom(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16882,10 +15616,7 @@ func (c *Client) GetIndexZscaler(queryParameters ...IndexQueryParameters) (respo
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16922,10 +15653,7 @@ func (c *Client) GetIndexZuso(queryParameters ...IndexQueryParameters) (response
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
@@ -16962,10 +15690,7 @@ func (c *Client) GetIndexZyxel(queryParameters ...IndexQueryParameters) (respons
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		var metaError MetaError
-		_ = json.NewDecoder(resp.Body).Decode(&metaError)
-
-		return nil, fmt.Errorf("error: %v", metaError.Errors)
+		return nil, handleErrorResponse(resp)
 	}
 
 	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
