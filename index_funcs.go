@@ -4112,6 +4112,42 @@ func (c *Client) GetIndexCodesys(queryParameters ...IndexQueryParameters) (respo
 	return responseJSON, nil
 }
 
+type IndexCommvaultResponse struct {
+	Benchmark float64                    `json:"_benchmark"`
+	Meta      IndexMeta                  `json:"_meta"`
+	Data      []client.AdvisoryCommVault `json:"data"`
+}
+
+// GetIndexCommvault -  CommVault security advisories are official notifications released by CommVault to address security vulnerabilities and updates. These advisories provide important information about the vulnerabilities, their potential impact, and recommendations for users to apply necessary patches or updates to ensure the security of their systems.
+func (c *Client) GetIndexCommvault(queryParameters ...IndexQueryParameters) (responseJSON *IndexCommvaultResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("commvault"), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		return nil, handleErrorResponse(resp)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
 type IndexCompassSecurityResponse struct {
 	Benchmark float64                          `json:"_benchmark"`
 	Meta      IndexMeta                        `json:"_meta"`
@@ -5119,6 +5155,42 @@ func (c *Client) GetIndexEpss(queryParameters ...IndexQueryParameters) (response
 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("epss"), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		return nil, handleErrorResponse(resp)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
+type IndexEuvdResponse struct {
+	Benchmark float64               `json:"_benchmark"`
+	Meta      IndexMeta             `json:"_meta"`
+	Data      []client.AdvisoryEUVD `json:"data"`
+}
+
+// GetIndexEuvd -  EUVD security advisories are official notifications released by the European Union to address security vulnerabilities and updates. These advisories provide important information about the vulnerabilities, their potential impact, and recommendations for users to apply necessary patches or updates to ensure security.
+func (c *Client) GetIndexEuvd(queryParameters ...IndexQueryParameters) (responseJSON *IndexEuvdResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("euvd"), nil)
 	if err != nil {
 		return nil, err
 	}
@@ -6262,6 +6334,42 @@ func (c *Client) GetIndexGnutls(queryParameters ...IndexQueryParameters) (respon
 
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("gnutls"), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	c.SetAuthHeader(req)
+
+	query := req.URL.Query()
+	setIndexQueryParameters(query, queryParameters...)
+	req.URL.RawQuery = query.Encode()
+
+	resp, err := httpClient.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		return nil, handleErrorResponse(resp)
+	}
+
+	_ = json.NewDecoder(resp.Body).Decode(&responseJSON)
+
+	return responseJSON, nil
+}
+
+type IndexGoVulndbResponse struct {
+	Benchmark float64                     `json:"_benchmark"`
+	Meta      IndexMeta                   `json:"_meta"`
+	Data      []client.AdvisoryGoVulnJSON `json:"data"`
+}
+
+// GetIndexGoVulndb -  Data about new vulnerabilities come directly from Go package maintainers or sources such as MITRE and GitHub. Reports are curated by the Go Security team.
+func (c *Client) GetIndexGoVulndb(queryParameters ...IndexQueryParameters) (responseJSON *IndexGoVulndbResponse, err error) {
+
+	httpClient := &http.Client{}
+	req, err := http.NewRequest("GET", c.GetUrl()+"/v3/index/"+url.QueryEscape("go-vulndb"), nil)
 	if err != nil {
 		return nil, err
 	}
