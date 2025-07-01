@@ -2,7 +2,13 @@
     <img src="/logo-sdk.png" align="center" alt="VulnCheck Logo" width="150" />
 </p>
 
+## :warning: This SDK is deprecated
+
+This version of the VulnCheck Go-SDK is deprecated. We recommend that you
+migrate to [sdk-go-v2](https://github.com/vulncheck-oss/sdk-go-v2).
+
 # The VulnCheck SDK For Go
+
 Bring the VulnCheck API to your Go applications.
 
 [![Release](https://img.shields.io/github/v/release/vulncheck-oss/sdk-go)](https://github.com/vulncheck-oss/sdk-go/releases)
@@ -18,7 +24,6 @@ Bring the VulnCheck API to your Go applications.
 go get github.com/vulncheck-oss/sdk-go
 ```
 
-
 ## Examples
 
 ### Connecting to the API
@@ -27,8 +32,8 @@ go get github.com/vulncheck-oss/sdk-go
 package main
 
 import (
-	"fmt"
-	"github.com/vulncheck-oss/sdk-go"
+ "fmt"
+ "github.com/vulncheck-oss/sdk-go"
 )
 
 func main() {
@@ -40,6 +45,7 @@ func main() {
 ### Available Methods
 
 ### PURL
+
 ```go
 response, err := client.GetPurl("pkg:hex/coherence@0.1.2")
 
@@ -51,6 +57,7 @@ fmt.Println(response.GetData())
 ```
 
 ### CPE
+
 ```go
 response, err := client.GetCpe("cpe:/a:microsoft:internet_explorer:8.0.6001:beta")
 
@@ -62,6 +69,7 @@ fmt.Println(response.GetData())
 ```
 
 ### BACKUP
+
 ```go
 response, err := client.GetIndexBackup("initial-access")
 
@@ -73,6 +81,7 @@ fmt.Println(response.GetData())
 ```
 
 ### INDICES
+
 ```go
 response, err := client.GetIndices()
 
@@ -84,6 +93,7 @@ fmt.Println(response.GetData())
 ```
 
 ### INDEX
+
 ```go
 queryParams := sdk.IndexQueryParameters{}
 
@@ -97,6 +107,7 @@ fmt.Println(response.GetData())
 ```
 
 ### INDEX (looking up a CVE in the vulncheck-nvd2 index)
+
 ```go
 response, err := client.GetIndexVulncheckNvd2(
     sdk.IndexQueryParameters{
@@ -113,6 +124,7 @@ cvssBaseScore := (*response.Data[0].Metrics.CvssMetricV31)[0].CvssData.BaseScore
 ```
 
 ### Cursor INDEX
+
 ```go
 queryParams := sdk.IndexQueryParameters{}
 
